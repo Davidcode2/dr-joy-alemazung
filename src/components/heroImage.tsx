@@ -7,11 +7,11 @@ export default function HeroImage({
 }) {
   return (
     <div
-      className="w-screen max-h-[80vh] bg-cover bg-center"
+      className="w-screen h-[80vh] bg-cover bg-top"
       style={{ backgroundImage: `url(${url})` }}
     >
-      <div className="max-h-fit grid grid-cols-8 grid-rows-8">
-        <div className="col-start-2 row-start-6">{children}</div>
+      <div className="h-full grid grid-cols-12 grid-rows-12">
+        <div className="col-start-2 col-span-4 row-start-8">{children}</div>
       </div>
     </div>
   );
