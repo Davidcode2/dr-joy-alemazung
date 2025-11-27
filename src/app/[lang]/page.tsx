@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { fetchAPI } from "./utils/fetch-api";
+import Loader from "@/src/components/loader";
+import { getStrapiMedia } from "./utils/api-helpers";
 
 type PropTypes = {
   params: Promise<{ lang: string }>;
@@ -9,40 +11,54 @@ type PropTypes = {
 
 export default function Home({ params }: PropTypes) {
   console.log("hello there");
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<any>({});
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
       const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
       const path = `/homepage`;
       const options = { headers: { Authorization: `Bearer ${token}` } };
-      const responseData = await fetchAPI(path, {}, options);
+      const urlParamsObject = {
+        sort: { createdAt: "desc" },
+        populate: {
+          headerImage: { fields: ["url"] },
+        },
+      };
+      const responseData = await fetchAPI(path, urlParamsObject, options);
       console.log(responseData);
+      console.log(responseData.data.headerImage.url);
       setData(responseData.data);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     fetchData();
   }, []);
 
+
+  if (isLoading) return <Loader />;
+  const imageUrl = getStrapiMedia(data.headerImage.url)!
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
+          <Image
+            src={imageUrl}
+            alt="Next.js logo"
+            width={500}
+            height={20}
+            priority
+          />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-          { data.Heading }
+            {data.heading}
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Looking for a starting point or more instructions? Head over to{" "}
