@@ -51,8 +51,8 @@ export default function Home({ params }: PropTypes) {
   return (
     <div>
       <HeroImage url={imageUrl}>
-        <h1 className="text-7xl font-semibold text-white">{data.heading}</h1>
-        <h2 className="text-3xl font-semibold text-white">{data.subHeading}</h2>
+        <h1 className="text-4xl xl:text-7xl font-semibold text-white">{data.heading}</h1>
+        <h2 className="text-xl xl:text-3xl font-semibold text-white">{data.subHeading}</h2>
       </HeroImage>
       <HeroNavigation />
       <Quote />

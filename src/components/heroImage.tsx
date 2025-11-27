@@ -11,7 +11,9 @@ export default function HeroImage({
       style={{ backgroundImage: `url(${url})` }}
     >
       <div className="h-full grid grid-cols-12 grid-rows-12">
-        <div className="col-start-2 col-span-4 row-start-8">{children}</div>
+        <div className="col-start-2 col-span-4 row-start-9 md:row-start-8">
+          {children}
+        </div>
       </div>
     </div>
   );
