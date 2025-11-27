@@ -7,6 +7,8 @@ import HeroImage from "@/src/components/heroImage";
 import HeroNavigation from "@/src/components/heroNavigation";
 import DescriptionText from "@/src/components/descriptionText";
 import Quote from "@/src/components/quote";
+import FamilyVita from "@/src/components/familyVita";
+import Experience from "@/src/components/experience";
 
 type PropTypes = {
   params: Promise<{ lang: string }>;
@@ -55,8 +57,10 @@ export default function Home({ params }: PropTypes) {
         <h2 className="text-xl xl:text-3xl font-semibold text-white">{data.subHeading}</h2>
       </HeroImage>
       <HeroNavigation />
-      <Quote />
       <DescriptionText />
+      <Quote />
+      <Experience/>
+      <FamilyVita/>
       <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
         {data.content[0].children[0].text}{" "}
       </p>
