@@ -36,7 +36,7 @@ export default function TopNavigation() {
           >
             <X />
           </div>
-          <MenuItems mobile={true} />
+          <MenuItems mobile={true} close={() => setShowMobileMenu(false)} />
         </div>
       )}
       <div
