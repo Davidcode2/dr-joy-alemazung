@@ -15,7 +15,6 @@ type PropTypes = {
 };
 
 export default function Home({ params }: PropTypes) {
-  console.log("hello there");
   const [data, setData] = useState<any>({});
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -32,8 +31,6 @@ export default function Home({ params }: PropTypes) {
         },
       };
       const responseData = await fetchAPI(path, urlParamsObject, options);
-      console.log(responseData);
-      console.log(responseData.data.headerImage.url);
       setData(responseData.data);
       setIsLoading(false);
     } catch (error) {
