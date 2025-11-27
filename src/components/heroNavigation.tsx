@@ -23,9 +23,9 @@ export default function HeroNavigation() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-move-right-icon lucide-move-right"
             >
               <path d="M18 8L22 12L18 16" />
@@ -34,7 +34,7 @@ export default function HeroNavigation() {
           </button>
         </a>
       </div>
-      <div className="contents !p-10 lg:!p-20 2xl:!p-28">
+      <div className="contents p-10 lg:p-20 2xl:p-28">
         <h2 className="mb-4 text-2xl xl:row-start-1 xl:col-start-2">
           Wissenschaft und Publikationen
         </h2>
@@ -47,7 +47,7 @@ export default function HeroNavigation() {
           href="/wissenschaft-und-publikationen"
           className="xl:row-start-3 xl:col-start-2"
         >
-          <button className="flex gap-x-4 !my-10 px-8 py-2 border bg-[var(--ghost-accent-color)]  hover:bg-[var(--ghost-accent-color)]/80 transition">
+          <button className="flex gap-x-4 my-10 px-8 py-2 border bg-[var(--ghost-accent-color)]  hover:bg-[var(--ghost-accent-color)]/80 transition">
             Mehr
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,9 +56,9 @@ export default function HeroNavigation() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-move-right-icon lucide-move-right"
             >
               <path d="M18 8L22 12L18 16" />
@@ -89,9 +89,9 @@ export default function HeroNavigation() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-move-right-icon lucide-move-right"
             >
               <path d="M18 8L22 12L18 16" />
