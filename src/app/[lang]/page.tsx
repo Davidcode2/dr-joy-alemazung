@@ -21,7 +21,10 @@ export default function Home({ params }: PropTypes) {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+      const token =
+        process.env.NODE_ENV === "production"
+          ? process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_PROD
+          : process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_DEV;
       const path = `/homepage`;
       const options = { headers: { Authorization: `Bearer ${token}` } };
       const urlParamsObject = {
@@ -50,14 +53,18 @@ export default function Home({ params }: PropTypes) {
   return (
     <div>
       <HeroImage url={imageUrl}>
-        <h1 className="text-4xl xl:text-7xl font-semibold text-white">{data.heading}</h1>
-        <h2 className="text-xl xl:text-3xl font-semibold text-white">{data.subHeading}</h2>
+        <h1 className="text-4xl xl:text-7xl font-semibold text-white">
+          {data.heading}
+        </h1>
+        <h2 className="text-xl xl:text-3xl font-semibold text-white">
+          {data.subHeading}
+        </h2>
       </HeroImage>
       <HeroNavigation />
       <DescriptionText />
       <Quote />
-      <Experience/>
-      <FamilyVita/>
+      <Experience />
+      <FamilyVita />
       <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
         {data.content[0].children[0].text}{" "}
       </p>
