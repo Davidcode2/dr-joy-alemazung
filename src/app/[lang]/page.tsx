@@ -21,19 +21,14 @@ export default function Home({ params }: PropTypes) {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const token =
-        process.env.NODE_ENV === "production"
-          ? process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_PROD
-          : process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_DEV;
       const path = `/homepage`;
-      const options = { headers: { Authorization: `Bearer ${token}` } };
       const urlParamsObject = {
         sort: { createdAt: "desc" },
         populate: {
           headerImage: { fields: ["url"] },
         },
       };
-      const responseData = await fetchAPI(path, urlParamsObject, options);
+      const responseData = await fetchAPI(path, urlParamsObject);
       setData(responseData.data);
       setIsLoading(false);
     } catch (error) {

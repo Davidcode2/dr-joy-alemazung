@@ -12,18 +12,14 @@ export default function Buergermeisterliches() {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
       const path = `/buergermeister`;
-      const options = { headers: { Authorization: `Bearer ${token}` } };
       const urlParamsObject = {
         sort: { createdAt: "desc" },
         populate: {
           headerImage: { fields: ["url"] },
         },
       };
-      const responseData = await fetchAPI(path, urlParamsObject, options);
-      console.log(responseData);
-      console.log(responseData.data.headerImage.url);
+      const responseData = await fetchAPI(path, urlParamsObject);
       setData(responseData.data);
       setIsLoading(false);
     } catch (error) {
