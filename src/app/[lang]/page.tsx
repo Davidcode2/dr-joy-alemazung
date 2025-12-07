@@ -1,5 +1,3 @@
-"use client";
-import { useState, useEffect } from "react";
 import { fetchAPI } from "./utils/fetch-api";
 import Loader from "@/src/components/loader";
 import { getStrapiMedia } from "./utils/api-helpers";
@@ -14,35 +12,30 @@ type PropTypes = {
   params: Promise<{ lang: string }>;
 };
 
-export default function Home({ params }: PropTypes) {
-  const [data, setData] = useState<any>({});
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  const fetchData = async () => {
-    setIsLoading(true);
+export default async function Home({ params }: PropTypes) {
+  const getData = async () => {
     try {
-      const path = `/homepage`;
-      const urlParamsObject = {
-        sort: { createdAt: "desc" },
-        populate: {
-          headerImage: { fields: ["url"] },
-        },
-      };
-      const responseData = await fetchAPI(path, urlParamsObject);
-      setData(responseData.data);
-      setIsLoading(false);
+      const data = await fetchData();
+      return data;
     } catch (error) {
       console.error(error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const fetchData = async () => {
+    const path = `/homepage`;
+    const urlParamsObject = {
+      sort: { createdAt: "desc" },
+      populate: {
+        headerImage: { fields: ["url"] },
+      },
+    };
+    const responseData = await fetchAPI(path, urlParamsObject);
+    return responseData.data;
+  };
 
-  if (isLoading) return <Loader />;
+  const data = await getData();
+
   const imageUrl = getStrapiMedia(data.headerImage.url)!;
 
   return (
