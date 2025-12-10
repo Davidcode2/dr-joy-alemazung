@@ -6,6 +6,7 @@ import DescriptionText from "@/src/components/descriptionText";
 import Quote from "@/src/components/quote";
 import FamilyVita from "@/src/components/familyVita";
 import Experience from "@/src/components/experience";
+import VerticalDividerBracket from "@/src/components/verticalDividerBracket";
 
 type PropTypes = {
   params: Promise<{ lang: string }>;
@@ -40,14 +41,15 @@ export default async function Home({ params }: PropTypes) {
   return (
     <div>
       <HeroImage url={imageUrl}>
-        <h1 className="text-4xl xl:text-7xl font-semibold text-white">
+        <h1 className="text-4xl md:text-5xl xl:text-7xl font-semibold font-serif text-white">
           {data.heading}
         </h1>
-        <h2 className="text-xl xl:text-3xl font-semibold text-white">
+        <h2 className="text-xl xl:text-3xl font-semibold pt-6 font-sans text-white">
           {data.subHeading}
         </h2>
       </HeroImage>
       <HeroNavigation />
+      <VerticalDividerBracket />
       <DescriptionText />
       <Quote />
       <Experience />
