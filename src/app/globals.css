@@ -26,6 +26,24 @@ body {
 }
 
 [data-theme="light"] {
+  --background: hsl(1, 0%, 100%);
+  --foreground: hsl(194, 33%, 12%);
+  --dark-accent: hsl(194, 33%, 18%);
+  --neutral-accent: hsl(194, 33%, 22%);
+  --accent: hsl(195, 37%, 40%);
+  --strong-accent: hsl(180, 55%, 31%);
+  --light-accent: hsl(172, 25%, 55%);
+  --ultralight-accent: hsl(172, 25%, 95%);
+  --muted-accent: hsl(172, 15%, 35%);
+  --grey-accent: hsl(172, 10%, 80%);
+  --primary: hsl(129, 22%, 69%);
+  --secondary: hsl(95, 32%, 82%);
+  --success: hsl(120, 40%, 60%);
+  --dark-success: hsl(120, 40%, 50%);
+  --alert: hsl(20, 70%, 60%);
+}
+
+[data-theme="dark"] {
   @apply text-slate-100;
   --background: #0a0a0a;
   --foreground: #ededed;
