@@ -13,7 +13,7 @@ export default function MenuItems({
     >
       <li>
         <Link href="/" className="mr-4 flex" onClick={close}>
-          <Home />
+          <Home strokeWidth={1.2} />
         </Link>
       </li>
       <li>
