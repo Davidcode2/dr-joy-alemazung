@@ -26,7 +26,7 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-[data-theme="light"] {
+[data-theme="_light"] {
   --background: hsl(1, 0%, 100%);
   --foreground: hsl(194, 33%, 12%);
   --dark-accent: hsl(194, 33%, 18%);
@@ -43,6 +43,25 @@ body {
   --dark-success: hsl(120, 40%, 50%);
   --alert: hsl(20, 70%, 60%);
 }
+
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #3b2f2f;
+  --dark-accent: #6b4c4c;
+  --accent: #a0522d;
+  --light-accent: #d2b48c;
+  --neutral-accent: hsl(30, 53%, 42%);
+  --strong-accent: hsl(30, 85%, 41%);
+  --ultralight-accent: hsl(30, 45%, 90%);
+  --grey-accent: hsl(30, 8%, 60%);
+  --muted-accent: hsl(30, 15%, 55%);
+  --primary: #deb887;
+  --secondary: #f5deb3;
+  --success: hsl(120, 40%, 60%);
+  --dark-success: hsl(120, 40%, 50%);
+  --alert: #ff4500;
+}
+
 
 [data-theme="dark"] {
   @apply text-slate-100;

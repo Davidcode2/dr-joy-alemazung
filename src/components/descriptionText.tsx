@@ -3,15 +3,6 @@ import Image from "next/image";
 export default function DescriptionText() {
   return (
     <>
-      <div className="w-full justify-center flex">
-        <Image
-          src={"/images/dividerFloral.svg"}
-          alt=""
-          width={40}
-          height={10}
-          className="w-60 h-fit"
-        />
-      </div>
       <div className="pb-40 lg:pt-40">
         <div className="flex flex-col xl:grid xl:grid-cols-[60%_40%] lg:gap-x-10 mx-10 lg:mx-90">
           <div className="order-2 xl:order-1 z-30">
@@ -38,7 +29,7 @@ export default function DescriptionText() {
             </section>
           </div>
           <div className="pb-20 xl:pb-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-5xl md:text-7xl lg:text-7xl text-[var(--accent)]">
-            <div className="xl:rotate-90">
+            <div className="font-serif xl:rotate-90">
               Lokale Verantwortung mit globaler Perspektive
             </div>
           </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function FamilyVita() {
   return (
-    <div className="mx-auto py-90 grid grid-cols-1 gap-10 items-center">
+    <div className="bg-[var(--ultralight-accent)] mx-auto py-90 grid grid-cols-1 gap-10 items-center">
       <div className="w-full rounded-lg flex items-center justify-center">
         <Image
           src="/images/alemazung_family.jpg"
