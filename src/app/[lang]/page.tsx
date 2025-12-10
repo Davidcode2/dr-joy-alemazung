@@ -1,5 +1,4 @@
 import { fetchAPI } from "./utils/fetch-api";
-import Loader from "@/src/components/loader";
 import { getStrapiMedia } from "./utils/api-helpers";
 import HeroImage from "@/src/components/heroImage";
 import HeroNavigation from "@/src/components/heroNavigation";
