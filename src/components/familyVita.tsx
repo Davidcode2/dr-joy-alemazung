@@ -12,7 +12,7 @@ export default function FamilyVita() {
           height={600}
         />
       </div>
-      <ul className="mx-auto lg:w-2/3 2xl:w-1/2 text-gray-800 flex justify-center h-full flex-col">
+      <ul className="mx-20 lg:mx-auto lg:w-2/3 2xl:w-1/2 text-gray-800 flex justify-center h-full flex-col">
         <li className="border-b border-gray-200 py-10 my-0 flex gap-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"

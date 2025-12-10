@@ -2,14 +2,14 @@ import Image from "next/image"
 
 export default function Experience() {
   return (
-    <section className="2xl:px-40 px-20 py-90">
+    <section className="2xl:px-40 px-10 md:px-20 py-90">
       <h2 className="py-20 pt-0 mt-0 pb-40 text-5xl lg:text-6xl text-[var(--foreground)]">Kommunale und internationale Erfahrungen</h2>
       <div className="grid xl:grid-cols-3 gap-y-60 gap-x-20 2xl:gap-x-40">
         <div className="relative shadow-lg p-10 xl:py-20 border rounded-xl border-[var(--accent)]/20">
           <Image
             src="/images/undraw_nature_yf30.svg"
             alt=""
-            className="absolute top-0 right-0 w-32 h-32 pointer-events-none -translate-y-1/2 -translate-x-1/5"
+            className="absolute max-sm:-top-7 top-0 right-0 w-32 h-32 pointer-events-none -translate-y-1/2 -translate-x-1/5"
             width={256}
             height={256}
           />

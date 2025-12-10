@@ -27,7 +27,7 @@ export default function DescriptionText() {
             </p>
           </section>
         </div>
-        <div className="pb-20 xl:pb-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-7xl lg:text-7xl text-[var(--ghost-accent-color)]">
+        <div className="pb-20 xl:pb-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-5xl md:text-7xl lg:text-7xl text-[var(--accent)]">
           <div className="xl:rotate-90">
             Lokale Verantwortung mit globaler Perspektive
           </div>

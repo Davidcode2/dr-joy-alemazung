@@ -9,7 +9,7 @@ export default function MenuItems({
 }) {
   return (
     <ul
-      className={`flex ${mobile && "flex-col gap-y-10 justify-center h-full items-center text-3xl"} gap-x-4`}
+      className={`flex ${mobile && "flex-col gap-y-10 justify-center text-center h-full items-center text-3xl"} gap-x-4`}
     >
       <li>
         <Link href="/" className="mr-4 flex" onClick={close}>
