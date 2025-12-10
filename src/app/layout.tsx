@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fira_Code } from "next/font/google";
+import { Playfair_Display, Geist, Geist_Mono, Fira_Code } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const playfairSerif = Playfair_Display({
+  variable: "--font-playfair-serif",
   subsets: ["latin"],
 });
 
@@ -78,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} antialiased`}
+        className={`${playfairSerif.variable} ${geistSans.variable} ${geistMono.variable} ${firaCode.variable} antialiased`}
       >
           {children}
       </body>
