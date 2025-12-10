@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+[data-theme="light"] {
+  @apply text-slate-100;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --ultra-accent: hsl(194, 13%, 12%);
+  --dark-accent: hsl(194, 33%, 18%);
+  --neutral-accent: hsl(194, 33%, 22%);
+  --accent: hsl(195, 37%, 40%);
+  --strong-accent: hsl(180, 55%, 31%);
+  --light-accent: hsl(172, 25%, 55%);
+  --ultralight-accent: hsl(102, 35%, 90%);
+  --muted-accent: hsl(172, 15%, 55%);
+  --grey-accent: hsl(172, 8%, 60%);
+  --primary: hsl(129, 22%, 69%);
+  --secondary: hsl(95, 32%, 82%);
+  --success: hsl(120, 40%, 60%);
+  --dark-success: hsl(120, 40%, 50%);
+  --alert: hsl(20, 70%, 60%);
+
+  ::selection {
+    background: hsl(172, 10%, 18%);
+  }
+}
+
+  
