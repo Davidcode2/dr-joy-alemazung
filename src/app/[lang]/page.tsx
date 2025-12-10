@@ -12,6 +12,7 @@ type PropTypes = {
 };
 
 export default async function Home({ params }: PropTypes) {
+
   const getData = async () => {
     try {
       const data = await fetchData();
