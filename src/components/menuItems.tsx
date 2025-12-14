@@ -31,7 +31,7 @@ export default function MenuItems({
         </Link>
       </li>
       <li>
-        <Link href="/votraege-und-medien" className="mr-4" onClick={close}>
+        <Link href="/vortraege-und-medien" className="mr-4" onClick={close}>
           Vorträge und Medien
         </Link>
       </li>

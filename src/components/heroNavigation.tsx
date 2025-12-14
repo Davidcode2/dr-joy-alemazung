@@ -77,7 +77,7 @@ export default function HeroNavigation() {
           TV-Interviews und Möglichkeiten für eine Buchungsanfrage.
         </p>
         <a
-          href="/medien-und-vortraege"
+          href="/vortraege-und-medien"
           className="xl:row-start-3 xl:col-start-3"
         >
           <button className="flex gap-x-4 !my-10 px-8 py-2 border bg-[var(--ghost-accent-color)]  hover:bg-[var(--ghost-accent-color)]/80 transition">
