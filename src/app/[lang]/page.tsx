@@ -44,7 +44,7 @@ export default async function Home({ params }: PropTypes) {
         <h1 className="text-4xl md:text-5xl xl:text-7xl font-semibold font-serif text-white">
           {data.heading}
         </h1>
-        <h2 className="text-xl xl:text-3xl font-semibold pt-6 font-sans text-white">
+        <h2 className="text-lg md:text-xl xl:text-3xl font-semibold pt-6 font-sans text-white">
           {data.subHeading}
         </h2>
       </HeroImage>

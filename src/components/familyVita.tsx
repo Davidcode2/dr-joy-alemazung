@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function FamilyVita() {
   return (
-    <div className="bg-[var(--ultralight-accent)] mx-auto py-90 grid grid-cols-1 gap-10 items-center">
+    <div className="bg-[var(--ultralight-accent)] mx-auto pb-32 lg:py-90 grid grid-cols-1 gap-10 items-center">
       <div className="w-full rounded-lg flex items-center justify-center">
         <Image
           src="/images/alemazung_family.jpg"
@@ -12,7 +12,7 @@ export default function FamilyVita() {
           height={600}
         />
       </div>
-      <ul className="mx-20 lg:mx-auto lg:w-2/3 2xl:w-1/2 text-gray-800 flex justify-center h-full flex-col">
+      <ul className="mx-5 md:mx-20 lg:mx-auto lg:w-2/3 2xl:w-1/2 text-gray-800 flex justify-center h-full flex-col">
         <li className="border-b border-gray-200 py-10 my-0 flex gap-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"

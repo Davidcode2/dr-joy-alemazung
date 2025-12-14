@@ -1,7 +1,7 @@
 export default function Quote() {
   return (
-    <div className="bg-[var(--ultralight-accent)] w-full">
-      <div className="lg:w-2/3 lg:py-80 pb-[280px] mx-auto">
+    <div className="bg-[var(--ultralight-accent)] py-50 lg:py-80  w-full">
+      <div className="lg:w-2/3 mx-auto">
         <div className="flex px-6">
           <span className="content-center text-8xl font-serif text-gray-400 mr-8 leading-none">
             „
