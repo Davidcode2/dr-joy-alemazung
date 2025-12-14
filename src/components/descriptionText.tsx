@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function DescriptionText() {
   return (
     <>
-      <div className="pb-40 lg:pt-40">
+      <div className="pb-40 lg:pt-28">
         <div className="flex flex-col xl:grid xl:grid-cols-[60%_40%] lg:gap-x-10 mx-10 lg:mx-20 xl:mx-60 2xl:mx-90">
           <div className="order-2 xl:order-1 z-30">
             <section className="">
