@@ -5,12 +5,16 @@ type PropTypes = {
 };
 
 export default function PostGrid({ posts }: PropTypes) {
+  const postsOverview = () => {
+    if (posts && posts.length > 0) {
+      return posts.map((post: any) => {
+        return <Post key={post.id} post={post} />;
+      });
+    }
+  };
   return (
     <div className="grid lg:grid-cols-3 gap-10">
-      {" "}
-      {posts.map((post: any) => {
-        return <Post key={post.id} post={post} />;
-      })}
+      {postsOverview()}
     </div>
   );
 }

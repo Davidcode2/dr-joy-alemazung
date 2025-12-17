@@ -12,11 +12,13 @@ export async function generateStaticParams() {
   // Fetch all slugs from Strapi
   const pages = await fetchAPI("/pages", { fields: ["slug"] });
   console.log("Fetched pages for static params:", pages);
+  if (!pages.data || pages.data.length === 0) {
+    return [];
+  }
   return pages.data.map((page: any) => ({
     slug: page.slug,
   }));
 }
-
 
 type PropTypes = {
   params: Promise<{ lang: string }>;
