@@ -1,0 +1,16 @@
+import Post from "./post";
+
+type PropTypes = {
+  posts: any;
+};
+
+export default function PostGrid({ posts }: PropTypes) {
+  return (
+    <div className="grid lg:grid-cols-3 gap-10">
+      {" "}
+      {posts.map((post: any) => {
+        return <Post key={post.id} post={post} />;
+      })}
+    </div>
+  );
+}
