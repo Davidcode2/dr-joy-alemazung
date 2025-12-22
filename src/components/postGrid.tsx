@@ -13,7 +13,7 @@ export default function PostGrid({ posts }: PropTypes) {
     }
   };
   return (
-    <div className="grid lg:grid-cols-3 gap-10">
+    <div className="grid lg:grid-cols-2 gap-10">
       {postsOverview()}
     </div>
   );

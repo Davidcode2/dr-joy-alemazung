@@ -21,7 +21,6 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_ENV=production
 
 ARG SKIP_BUILD_STATIC_GENERATION
 ENV SKIP_BUILD_STATIC_GENERATION=$SKIP_BUILD_STATIC_GENERATION
