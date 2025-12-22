@@ -41,7 +41,6 @@ jobs:
       build_args: |
         SKIP_BUILD_STATIC_GENERATION=false
         STRAPI_API_URL_PROD=https://api.alemazung.immoly.io
-        STRAPI_API_TOKEN_PROD=${{ secrets.STRAPI_API_TOKEN }}
     secrets: inherit
 
 #  deploy-app:
