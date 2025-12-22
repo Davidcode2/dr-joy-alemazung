@@ -12,10 +12,6 @@ on:
       build_args:
         required: false
         type: string
-      secrets: 
-        STRAPI_API_TOKEN_PROD:
-          type: string
-          required: true
     outputs:
       version:
         description: "Version extracted from package.json"
