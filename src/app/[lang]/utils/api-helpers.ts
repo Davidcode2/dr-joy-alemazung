@@ -1,7 +1,7 @@
 export function getStrapiURL(path = "") {
   const url = process.env.NODE_ENV === "development" 
     ? process.env.NEXT_PUBLIC_STRAPI_API_URL_DEV
-    : process.env.NEXT_PUBLIC_STRAPI_API_URL_PROD
+    : process.env.STRAPI_API_URL_PROD
 
   return `${ url || "http://localhost:1337"}${path}`;
 }

@@ -1,16 +1,10 @@
 import { fetchAPI } from "../utils/fetch-api";
 import { getStrapiMedia } from "../utils/api-helpers";
 import SmallHeroImage from "@/src/components/shortHeroImage";
-import Post from "@/src/components/post";
 import PostGrid from "@/src/components/postGrid";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;
-};
-
-type Post = {
-  heading: string;
-  content: Array<{ children: Array<{ text: string }> }>;
 };
 
 export default async function SubPage({ params }: PropTypes) {
@@ -18,14 +12,18 @@ export default async function SubPage({ params }: PropTypes) {
   const path = `/pages`;
   const urlParamsObject = {
     filters: { slug: slug },
-    populate: { 
-      heroImage: { fields: ["url"] }, 
-      posts: { populate: "*" } 
+    populate: {
+      heroImage: { fields: ["url"] },
+      posts: { populate: "*" },
     },
   };
   const response = await fetchAPI(path, urlParamsObject);
+  const page = response?.data?.[0];
+
+  if (!page?.content?.[0]?.children) {
+    return <div className="p-10">Not found</div>;
+  }
   const data = response.data[0];
-  console.log("Fetched page data:", data);
 
   const imageUrl = getStrapiMedia(data.heroImage.url)!;
   return (
@@ -39,7 +37,7 @@ export default async function SubPage({ params }: PropTypes) {
             {data.content[0].children[0].text}
           </p>
         </section>
-        <PostGrid posts={data.posts}/>
+        <PostGrid posts={data.posts} />
       </div>
     </div>
   );

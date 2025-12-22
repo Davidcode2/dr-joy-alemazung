@@ -10,7 +10,7 @@ export async function fetchAPI(
   try {
     const token =
       process.env.NODE_ENV === "production"
-        ? process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_PROD
+        ? process.env.STRAPI_API_TOKEN_PROD
         : process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_DEV;
     // Merge default and user options
     const mergedOptions = {
