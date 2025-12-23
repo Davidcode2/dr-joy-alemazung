@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MoreButton from "./moreButton";
 
 type PropTypes = {
@@ -16,7 +17,9 @@ export default function PostPreviewCard({ post }: PropTypes) {
         <div>{new Date(post.published_date).toLocaleDateString()}</div>
       </div>
       <p>{postContentPreview}</p>
-      <MoreButton/>
+      <Link href={`/posts/${post.slug}`}>
+        <MoreButton />
+      </Link>
     </div>
   );
 }
