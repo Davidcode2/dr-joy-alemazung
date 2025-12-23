@@ -1,4 +1,4 @@
-import Post from "./post";
+import PostPreviewCard from "./postPreviewCard";
 
 type PropTypes = {
   posts: any;
@@ -8,7 +8,7 @@ export default function PostGrid({ posts }: PropTypes) {
   const postsOverview = () => {
     if (posts && posts.length > 0) {
       return posts.map((post: any) => {
-        return <Post key={post.id} post={post} />;
+        return <PostPreviewCard key={post.id} post={post} />;
       });
     }
   };

@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function HeroNavigation() {
   return (
-    <div className="bg-[var(--ultralight-accent)] xl:grid xl:grid-cols-3 p-10 lg:p-20 2xl:p-28 xl:grid-rows-[auto_1fr_auto] gap-x-20">
-      <div className="contents !p-10 lg:!p-20 2xl:!p-28">
+    <div className="bg-(--ultralight-accent) xl:grid xl:grid-cols-3 p-10 lg:p-20 2xl:p-28 xl:grid-rows-[auto_1fr_auto] gap-x-20">
+      <div className="contents p-10 lg:p-20 2xl:p-28">
         <h2 className="mb-4 xl:row-start-1 xl:col-start-1 text-2xl">
           Bürgermeisterliches
         </h2>
@@ -10,11 +12,11 @@ export default function HeroNavigation() {
           Bürgermeister von Heubach. Erfahren Sie mehr über aktuelle Projekte
           und Initiativen.
         </p>
-        <a
+        <Link
           href="/buergermeisterliches"
           className="xl:row-start-3 xl:col-start-1"
         >
-          <button className="flex gap-x-4 !my-10 px-8 py-2 border bg-[var(--ghost-accent-color)]  hover:bg-[var(--ghost-accent-color)]/80 transition">
+          <button className="flex gap-x-4 my-10 px-8 py-2 border bg-(--ghost-accent-color)  hover:bg-(--ghost-accent-color)/80 transition">
             Mehr
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +34,7 @@ export default function HeroNavigation() {
               <path d="M2 12H22" />
             </svg>
           </button>
-        </a>
+        </Link>
       </div>
       <div className="contents p-10 lg:p-20 2xl:p-28">
         <h2 className="mb-4 text-2xl xl:row-start-1 xl:col-start-2">
@@ -43,11 +45,11 @@ export default function HeroNavigation() {
           und Fachartikeln bis hin zu Interviews. Einblicke in seine Forschung
           zu Nachhaltigkeit, Migration und internationaler Politik.
         </p>
-        <a
+        <Link
           href="/wissenschaft-und-publikationen"
           className="xl:row-start-3 xl:col-start-2"
         >
-          <button className="flex gap-x-4 my-10 px-8 py-2 border bg-[var(--ghost-accent-color)]  hover:bg-[var(--ghost-accent-color)]/80 transition">
+          <button className="flex gap-x-4 my-10 px-8 py-2 border bg-(--ghost-accent-color)  hover:bg-(--ghost-accent-color)/80 transition">
             Mehr
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,9 +67,9 @@ export default function HeroNavigation() {
               <path d="M2 12H22" />
             </svg>
           </button>
-        </a>
+        </Link>
       </div>
-      <div className="contents !p-10 lg:!p-20 2xl:!p-28">
+      <div className="contents p-10 lg:p-20 2xl:p-28">
         <h2 className="mb-4 text-2xl xl:row-start-1 xl:col-start-3">
           Medien und Vorträge
         </h2>
@@ -76,11 +78,11 @@ export default function HeroNavigation() {
           Vorträgen, Panels und Medien. Entdecken Sie hier Presseberichte,
           TV-Interviews und Möglichkeiten für eine Buchungsanfrage.
         </p>
-        <a
+        <Link
           href="/vortraege-und-medien"
           className="xl:row-start-3 xl:col-start-3"
         >
-          <button className="flex gap-x-4 !my-10 px-8 py-2 border bg-[var(--ghost-accent-color)]  hover:bg-[var(--ghost-accent-color)]/80 transition">
+          <button className="flex gap-x-4 my-10 px-8 py-2 border bg-(--ghost-accent-color)  hover:bg-(--ghost-accent-color)/80 transition">
             Mehr
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +100,7 @@ export default function HeroNavigation() {
               <path d="M2 12H22" />
             </svg>
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );
