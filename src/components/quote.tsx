@@ -1,12 +1,12 @@
 export default function Quote() {
   return (
-    <div className="bg-[var(--ultralight-accent)] py-50 lg:py-80  w-full">
+    <div className="bg-(--ultralight-accent) py-50 lg:py-80  w-full">
       <div className="lg:w-2/3 mx-auto">
         <div className="flex px-6">
           <span className="content-center text-8xl font-serif text-gray-400 mr-8 leading-none">
             „
           </span>
-          <blockquote className="flex text-center items-center justify-center italic text-4xl/20 lg:text-6xl/20 text-gray-700 my-0 p-0">
+          <blockquote className="flex text-center items-center justify-center italic text-3xl/15 sm:text-4xl/20 lg:text-6xl/20 text-gray-700 my-0 p-0">
             <span className="font-serif">
               Führung ist das Privileg, den Menschen zu dienen und&nbsp;nicht
               das Recht, über sie zu herrschen

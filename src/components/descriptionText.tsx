@@ -7,7 +7,7 @@ export default function DescriptionText() {
         <div className="flex flex-col xl:grid xl:grid-cols-[60%_40%] lg:gap-x-10 mx-10 lg:mx-20 xl:mx-60 2xl:mx-90">
           <div className="order-2 xl:order-1 z-30">
             <section className="">
-              <p className="z-30 lg:text-2xl leading-12">
+              <p className="z-30 lg:text-2xl leading-7 lg:leading-12">
                 Dr. Joy A. Alemazung verkörpert die Brücke zwischen lokaler
                 Verantwortung und globaler Perspektive. Geboren in Kamerun und
                 heute Bürgermeister der Stadt Heubach, verbindet er seine
