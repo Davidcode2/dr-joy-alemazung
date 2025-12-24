@@ -16,6 +16,7 @@ export default async function Post({ params }: PropTypes) {
   };
   const response = await fetchAPI(`/posts`, urlParamsObject);
   const post = response?.data?.[0];
+  console.log(post);
   const postContent = post.content[0].body[0].children[0].text;
   return (
     <div className="m-8">
