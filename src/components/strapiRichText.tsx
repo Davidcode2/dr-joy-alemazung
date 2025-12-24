@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import Link from "next/link";
 
 // Type definitions for Strapi rich text structure
