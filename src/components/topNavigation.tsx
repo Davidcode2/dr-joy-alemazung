@@ -29,13 +29,19 @@ export default function TopNavigation() {
   }, [showMobileMenu]);
 
   const toggleTheme = () => {
+    if (theme!.includes("dark"))
+      document.documentElement.classList.remove("dark");
+    else {
+      document.documentElement.classList.add("dark");
+    }
+
     setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
     <div className="m-4 flex">
       {showMobileMenu && (
-        <div className="p-4 md:hidden block mb-4 h-screen fixed inset-0 bg-[var(--background)]">
+        <div className="p-4 md:hidden block mb-4 h-screen fixed inset-0 bg-background)">
           <div
             className="md:hidden"
             onClick={() => setShowMobileMenu(!showMobileMenu)}
