@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Experience() {
   return (
     <section className="2xl:px-40 px-5 md:px-20 max-sm:pt-10 max-sm:pb-32 py-32 lg:py-42">
-      <h2 className="py-20 pt-0 mt-0 pb-40 text-5xl lg:text-6xl text-foreground) font-serif">Kommunale und internationale Erfahrungen</h2>
+      <h2 className="py-0 mt-0 pb-40 md:pb-48 text-5xl lg:text-6xl text-foreground) font-serif">Kommunale und internationale Erfahrungen</h2>
       <div className="grid xl:grid-cols-3 gap-y-32 md:gap-y-60 gap-x-20 2xl:gap-x-40">
         <div className="relative shadow-lg p-10 xl:py-20 border border-(--accent)/20">
           <Image

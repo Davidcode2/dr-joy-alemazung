@@ -35,7 +35,7 @@ export default function DescriptionText() {
           </div>
         </div>
 
-        <div className="pt-32 md:pt-60 flex justify-center gap-x-5 md:gap-x-20">
+        <div className="pt-32 flex justify-center gap-x-5 md:gap-x-20">
           <Image
             width={20}
             height={20}
