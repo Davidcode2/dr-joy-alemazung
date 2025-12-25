@@ -72,13 +72,6 @@ export default async function Home({ params }: PropTypes) {
       <Experience />
       <VerticalDividerBracket color={"--background"} />
       <FamilyVita />
-      <p className="max-w-md text-lg leading-8 text-(--accent)">
-        {data.content &&
-          data.content.length > 0 &&
-          data.content[0].children &&
-          data.content[0].children.length > 0 &&
-          data.content[0].children[0].text}{" "}
-      </p>
     </div>
   );
 }
