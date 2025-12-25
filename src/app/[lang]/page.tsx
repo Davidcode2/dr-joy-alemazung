@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   const pages = await fetchAPI("/pages", { fields: ["slug"] });
   console.log("Fetched pages for static params:", pages);
   if (pages.error) {
-     throw new Error(`Failed to fetch pages: ${pages.error.message}`);
+    throw new Error(`Failed to fetch pages: ${pages.error.message}`);
   }
   if (!pages.data || pages.data.length === 0) {
     return [];
@@ -65,7 +65,6 @@ export default async function Home({ params }: PropTypes) {
         </h2>
       </HeroImage>
       <HeroNavigation />
-      <VerticalDividerBracket />
       <DescriptionText />
       <VerticalDividerBracket color={"--background"} />
       <Quote />
