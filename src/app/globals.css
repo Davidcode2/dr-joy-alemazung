@@ -56,7 +56,7 @@ body {
   --strong-accent: hsl(30, 85%, 41%);
   --ultralight-accent: hsl(30, 45%, 90%);
   --grey-accent: hsl(30, 8%, 60%);
-  --muted-accent: hsl(30, 15%, 55%);
+  --muted-accent: hsl(30, 15%, 35%);
   --primary: #deb887;
   --secondary: #f5deb3;
   --success: hsl(120, 40%, 60%);
@@ -64,7 +64,7 @@ body {
   --alert: #ff4500;
 }
 
-[data-theme="dark"] {
+[data-theme="__dark"] {
   @apply text-slate-100;
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -87,6 +87,29 @@ body {
   }
 }
 
+[data-theme="dark"] {
+  @apply text-slate-100;
+  --background: hsl(10, 99%, 1%);
+  --ultra-accent: hsl(10, 13%, 12%);
+  --foreground: #f5f5dc;
+  --dark-accent: #6b4c4c;
+  --accent: hsl(30, 83%, 82%);
+  --light-accent: #d2b48c;
+  --neutral-accent: hsl(30, 53%, 42%);
+  --strong-accent: hsl(30, 85%, 41%);
+  --grey-accent: hsl(30, 8%, 60%);
+  --muted-accent: hsl(30, 15%, 55%);
+  --ultralight-accent: hsl(30, 15%, 55%);
+  --primary: #deb887;
+  --secondary: #f5deb3;
+  --success: hsl(120, 40%, 60%);
+  --dark-success: hsl(120, 40%, 50%);
+  --alert: #ff4500;
+
+  ::selection {
+    background: hsl(30, 10%, 18%);
+  }
+}
 
 [data-theme="_dark"] {
   @apply text-slate-100;

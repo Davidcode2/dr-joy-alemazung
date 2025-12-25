@@ -33,7 +33,7 @@ export default async function SubPage({ params }: PropTypes) {
         <h1 className="text-4xl md:text-7xl font-semibold font-serif">{data.heading}</h1>
         <h2 className="text-3xl font-semibold">{data.subHeading}</h2>
         <section className="py-10">
-          <p className="max-w-4xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-4xl text-lg leading-8 text-(--muted-accent)">
             {data.content[0].children[0].text}
           </p>
         </section>

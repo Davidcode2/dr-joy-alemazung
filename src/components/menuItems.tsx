@@ -18,7 +18,7 @@ export default function MenuItems({
       </li>
       <li>
         <Link href="/buergermeisterliches" className="mr-4" onClick={close}>
-          Bürgermeisterliches
+          Bürgermeisteramt
         </Link>
       </li>
       <li>

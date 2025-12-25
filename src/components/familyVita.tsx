@@ -13,7 +13,7 @@ export default function FamilyVita() {
         />
       </div>
       <ul className="mx-5 md:mx-20 lg:mx-auto lg:w-2/3 2xl:w-1/2 text-gray-800 flex justify-center h-full flex-col">
-        <li className="border-b border-gray-200 py-10 my-0 flex gap-x-4">
+        <li className="border-b border-(--light-accent) py-10 my-0 flex gap-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -30,7 +30,7 @@ export default function FamilyVita() {
             /></svg>
           Gmünder mit kamerunischen Wurzeln, Jahrgang 1974
         </li>
-        <li className="border-b border-gray-200 py-10 my-0 flex gap-x-4">
+        <li className="border-b border-(--light-accent) py-10 my-0 flex gap-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -45,7 +45,7 @@ export default function FamilyVita() {
           ><circle cx="9" cy="9" r="7" /><circle cx="15" cy="15" r="7" /></svg>
           Verheiratet, stolzer Vater von drei Kindern
         </li>
-        <li className="border-b border-gray-200 py-10 my-0 flex gap-x-4">
+        <li className="border-b border-(--light-accent) py-10 my-0 flex gap-x-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
