@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+    <footer className="w-full border-t border-gray-300 dark:border-gray-700 bg-(--ultralight-accent)/20">
       <div className="max-w-7xl mx-auto px-6 pt-62 pb-40">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
@@ -10,7 +10,7 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-semibold mb-4">
               Dr. Joy A. Alemazung
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-(--gray-accent)">
               Bürgermeister, Wissenschaftler und Experte für Nachhaltigkeit und
               Migration
             </p>
@@ -18,14 +18,22 @@ export default function Footer() {
 
           {/* Main Sections */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-gray-700 dark:text-gray-300">
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-(--grey-accent)">
               Navigation
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
+                  href="/"
+                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/buergermeisterliches"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition"
+                  className="text-(--grey-accent)/80 hover:text-(--grey-accent) transition"
                 >
                   Bürgermeisteramt
                 </Link>
@@ -33,7 +41,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/wissenschaft-und-publikationen"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition"
+                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Wissenschaft und Publikationen
                 </Link>
@@ -41,7 +49,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/vortraege-und-medien"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition"
+                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Medien und Vorträge
                 </Link>
@@ -58,12 +66,12 @@ export default function Footer() {
               <li>
                 <Link
                   href="/impressum"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition"
+                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Impressum
                 </Link>
               </li>
-              <li className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition">
+              <li className="text-(--grey-accent) hover:text-(--grey-accent) transition">
                 © {new Date().getFullYear()} Dr. Joy A. Alemazung. Alle Rechte
                 vorbehalten.
               </li>

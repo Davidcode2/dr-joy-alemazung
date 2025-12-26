@@ -55,7 +55,7 @@ body {
   --neutral-accent: hsl(30, 53%, 42%);
   --strong-accent: hsl(30, 85%, 41%);
   --ultralight-accent: hsl(30, 45%, 90%);
-  --grey-accent: hsl(30, 8%, 60%);
+  --grey-accent: hsl(30, 8%, 25%);
   --muted-accent: hsl(30, 15%, 35%);
   --primary: #deb887;
   --secondary: #f5deb3;
