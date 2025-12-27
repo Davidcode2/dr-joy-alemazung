@@ -58,11 +58,11 @@ export default async function Home({ params }: PropTypes) {
       <div>
         <HeroImage url={imageUrl}>
           <div className="h-full flex flex-col justify-center md:justify-end px-6 md:px-12 lg:px-20 pb-12 md:pb-20 lg:pb-24">
-            <div className="max-w-2xl space-y-4 md:space-y-6">
+            <div className="max-w-2xl space-y-4 md:space-y-6 xl:pl-18">
               <h1 className="text-4xl md:text-5xl xl:text-7xl font-semibold font-serif text-white leading-tight">
                 {data.heading}
               </h1>
-              <h2 className="text-base md:text-xl xl:text-2xl font-semibold font-sans text-white leading-relaxed md:w-2/3">
+              <h2 className="text-base md:text-xl xl:text-2xl font-semibold font-sans text-white leading-relaxed md:w-3/4">
                 {data.subHeading}
               </h2>
             </div>
