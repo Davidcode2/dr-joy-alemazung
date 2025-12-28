@@ -6,12 +6,19 @@ export async function fetchAPI(
   path: string,
   urlParamsObject = {},
   options = {},
+  locale?: string, // Add locale parameter
 ) {
   try {
     const token =
       process.env.NODE_ENV === "production"
         ? process.env.STRAPI_API_TOKEN_PROD
         : process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_DEV;
+    
+    // Add locale to urlParamsObject if provided
+    const paramsWithLocale = locale
+      ? { ...urlParamsObject, locale }
+      : urlParamsObject;
+    
     // Merge default and user options
     const mergedOptions = {
       next: { revalidate: 60 },
@@ -23,7 +30,7 @@ export async function fetchAPI(
     };
 
     // Build request URL
-    const queryString = qs.stringify(urlParamsObject);
+    const queryString = qs.stringify(paramsWithLocale);
     const requestUrl = `${getStrapiURL(
       `/api${path}${queryString ? `?${queryString}` : ""}`,
     )}`;

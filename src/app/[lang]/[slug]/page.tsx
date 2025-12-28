@@ -1,5 +1,6 @@
 import { fetchAPI } from "../utils/fetch-api";
 import { getStrapiMedia } from "../utils/api-helpers";
+import { normalizeLocale } from "../utils/locale-helpers";
 import SmallHeroImage from "@/src/components/shortHeroImage";
 import PostGrid from "@/src/components/postGrid";
 
@@ -9,6 +10,8 @@ type PropTypes = {
 
 export default async function SubPage({ params }: PropTypes) {
   const { lang, slug } = await params;
+  const locale = normalizeLocale(lang);
+  
   const path = `/pages`;
   const urlParamsObject = {
     filters: { slug: slug },
@@ -17,7 +20,7 @@ export default async function SubPage({ params }: PropTypes) {
       posts: { populate: "*" },
     },
   };
-  const response = await fetchAPI(path, urlParamsObject);
+  const response = await fetchAPI(path, urlParamsObject, {}, locale);
   const page = response?.data?.[0];
 
   if (!page?.content?.[0]?.children) {

@@ -1,5 +1,6 @@
 import { fetchAPI } from "./utils/fetch-api";
 import { getStrapiMedia } from "./utils/api-helpers";
+import { normalizeLocale } from "./utils/locale-helpers";
 import HeroImage from "@/src/components/heroImage";
 import HeroNavigation from "@/src/components/heroNavigation";
 import DescriptionText from "@/src/components/descriptionText";
@@ -20,7 +21,6 @@ export async function generateStaticParams() {
   }
   return pages.data.map((page: any) => ({
     slug: page.slug,
-    lang: "de",
   }));
 }
 
@@ -29,6 +29,9 @@ type PropTypes = {
 };
 
 export default async function Home({ params }: PropTypes) {
+  const { lang } = await params;
+  const locale = normalizeLocale(lang);
+  
   const getData = async () => {
     try {
       const data = await fetchData();
@@ -46,7 +49,7 @@ export default async function Home({ params }: PropTypes) {
         headerImage: { fields: ["url"] },
       },
     };
-    const responseData = await fetchAPI(path, urlParamsObject);
+    const responseData = await fetchAPI(path, urlParamsObject, {}, locale);
     return responseData.data;
   };
 

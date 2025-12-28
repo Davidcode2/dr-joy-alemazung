@@ -1,6 +1,7 @@
 import { fetchAPI } from "../../utils/fetch-api";
 import BackButton from "@/src/components/backButton";
 import StrapiRichText from "@/src/components/strapiRichText";
+import { normalizeLocale } from "../../utils/locale-helpers";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;
@@ -8,6 +9,8 @@ type PropTypes = {
 
 export default async function Post({ params }: PropTypes) {
   const { lang, slug } = await params;
+  const locale = normalizeLocale(lang);
+  
   console.log(slug);
   const urlParamsObject = {
     filters: { slug },
@@ -15,7 +18,7 @@ export default async function Post({ params }: PropTypes) {
       content: { populate: "*" },
     },
   };
-  const response = await fetchAPI(`/posts`, urlParamsObject);
+  const response = await fetchAPI(`/posts`, urlParamsObject, {}, locale);
   const post = response?.data?.[0];
   console.log(post);
   
