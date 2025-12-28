@@ -3,9 +3,10 @@ import MoreButton from "./moreButton";
 
 type PropTypes = {
   post: any;
+  locale: string;
 };
 
-export default function PostPreviewCard({ post }: PropTypes) {
+export default function PostPreviewCard({ post, locale }: PropTypes) {
   const postContent = post.content[0].body[0].children[0].text;
   const postContentPreview =
     postContent.slice(0, 200) + (postContent.length > 200 ? "..." : "");
@@ -17,7 +18,7 @@ export default function PostPreviewCard({ post }: PropTypes) {
         <div>{new Date(post.published_date).toLocaleDateString()}</div>
       </div>
       <p>{postContentPreview}</p>
-      <Link href={`/posts/${post.slug}`}>
+      <Link href={`/${locale}/posts/${post.slug}`}>
         <MoreButton />
       </Link>
     </div>

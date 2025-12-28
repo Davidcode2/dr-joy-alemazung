@@ -1,7 +1,11 @@
 import { MoveRightIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function HeroNavigation() {
+type HeroNavigationProps = {
+  locale: string;
+};
+
+export default function HeroNavigation({ locale }: HeroNavigationProps) {
   return (
     <div className="relative shadow-lg dark:shadow-gray-950 bottom-10 mx-10 lg:mx-20 bg-(--ultralight-accent) xl:grid xl:grid-cols-3 p-10 lg:p-20 2xl:p-28 xl:grid-rows-[auto_1fr_auto] gap-x-20">
       <div className="contents p-10 lg:p-20 2xl:p-28">
@@ -14,7 +18,7 @@ export default function HeroNavigation() {
           und Initiativen.
         </p>
         <Link
-          href="/buergermeisterliches"
+          href={`/${locale}/buergermeisterliches`}
           className="xl:row-start-3 xl:col-start-1"
         >
           <button className="group flex gap-x-4 mt-10 max-xl:my-10 px-8 py-2 border hover:bg-(--light-accent)/20 transition">
@@ -33,7 +37,7 @@ export default function HeroNavigation() {
           zu Nachhaltigkeit, Migration und internationaler Politik.
         </p>
         <Link
-          href="/wissenschaft-und-publikationen"
+          href={`/${locale}/wissenschaft-und-publikationen`}
           className="xl:row-start-3 xl:col-start-2"
         >
           <button className="group flex gap-x-4 mt-10 max-xl:my-10 px-8 py-2 border hover:bg-(--light-accent)/20 transition">
@@ -52,7 +56,7 @@ export default function HeroNavigation() {
           TV-Interviews und Möglichkeiten für eine Buchungsanfrage.
         </p>
         <Link
-          href="/vortraege-und-medien"
+          href={`/${locale}/vortraege-und-medien`}
           className="xl:row-start-3 xl:col-start-3"
         >
           <button className="group flex gap-x-4 mt-10 max-xl:my-10 px-8 py-2 border hover:bg-(--light-accent)/20 transition">

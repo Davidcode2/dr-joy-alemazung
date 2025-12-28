@@ -40,7 +40,7 @@ export default async function SubPage({ params }: PropTypes) {
             {data.content[0].children[0].text}
           </p>
         </section>
-        <PostGrid posts={data.posts} />
+        <PostGrid posts={data.posts} locale={locale} />
       </div>
     </div>
   );

@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export default function Footer() {
+type FooterProps = {
+  locale: string;
+};
+
+export default function Footer({ locale }: FooterProps) {
   return (
     <footer className="w-full border-t border-gray-300 dark:border-gray-700 bg-(--ultralight-accent)/20">
       <div className="max-w-7xl mx-auto px-6 pt-62 pb-40">
@@ -24,7 +28,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/"
+                  href={`/${locale}`}
                   className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Home
@@ -32,7 +36,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/buergermeisterliches"
+                  href={`/${locale}/buergermeisterliches`}
                   className="text-(--grey-accent)/80 hover:text-(--grey-accent) transition"
                 >
                   Bürgermeisteramt
@@ -40,7 +44,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/wissenschaft-und-publikationen"
+                  href={`/${locale}/wissenschaft-und-publikationen`}
                   className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Wissenschaft und Publikationen
@@ -48,7 +52,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/vortraege-und-medien"
+                  href={`/${locale}/vortraege-und-medien`}
                   className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Medien und Vorträge
@@ -65,7 +69,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/impressum"
+                  href={`/${locale}/impressum`}
                   className="text-(--grey-accent) hover:text-(--grey-accent) transition"
                 >
                   Impressum

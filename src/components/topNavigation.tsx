@@ -4,7 +4,11 @@ import MenuItems from "@/src/components/menuItems";
 import { Equal, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 
-export default function TopNavigation() {
+type TopNavigationProps = {
+  locale: string;
+};
+
+export default function TopNavigation({ locale }: TopNavigationProps) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -48,7 +52,7 @@ export default function TopNavigation() {
           >
             <X />
           </div>
-          <MenuItems mobile={true} close={() => setShowMobileMenu(false)} />
+          <MenuItems mobile={true} close={() => setShowMobileMenu(false)} locale={locale} />
         </div>
       )}
       <div
@@ -58,7 +62,7 @@ export default function TopNavigation() {
         <Equal />
       </div>
       <div className="md:block hidden">
-        <MenuItems />
+        <MenuItems locale={locale} />
       </div>
       <div className="ml-auto" onClick={toggleTheme}>
         <Sun />

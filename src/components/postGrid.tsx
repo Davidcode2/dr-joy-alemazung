@@ -2,13 +2,14 @@ import PostPreviewCard from "./postPreviewCard";
 
 type PropTypes = {
   posts: any;
+  locale: string;
 };
 
-export default function PostGrid({ posts }: PropTypes) {
+export default function PostGrid({ posts, locale }: PropTypes) {
   const postsOverview = () => {
     if (posts && posts.length > 0) {
       return posts.map((post: any) => {
-        return <PostPreviewCard key={post.id} post={post} />;
+        return <PostPreviewCard key={post.id} post={post} locale={locale} />;
       });
     }
   };

@@ -71,7 +71,7 @@ export default async function Home({ params }: PropTypes) {
             </div>
           </div>
         </HeroImage>
-      <HeroNavigation />
+      <HeroNavigation locale={lang} />
       <DescriptionText />
       <VerticalDividerBracket color={"--background"} />
       <Quote />
