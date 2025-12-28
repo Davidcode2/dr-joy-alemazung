@@ -7,7 +7,7 @@ export default function SmallHeroImage({
 }) {
   return (
     <div
-      className="w-screen h-[60vh] bg-cover bg-top"
+      className="w-full h-[60vh] bg-cover bg-top"
       style={{ backgroundImage: `url(${url})` }}
     >
       <div className="h-full grid grid-cols-12 grid-rows-12">

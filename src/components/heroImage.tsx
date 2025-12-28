@@ -7,7 +7,7 @@ export default function HeroImage({
 }) {
   return (
     <div
-      className="w-screen h-[80vh] bg-cover bg-top"
+      className="w-full h-[80vh] bg-cover bg-top"
       style={{ backgroundImage: `url(${url})` }}
     >
     { children}

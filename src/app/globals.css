@@ -2,6 +2,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scrollbar-width: thin; /* for Firefox */
+  scrollbar-color: #888 transparent; /* for Firefox */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
