@@ -77,7 +77,6 @@ export default async function Home({ params }: PropTypes) {
       <Quote />
       <VerticalDividerBracket />
       <Experience />
-      <VerticalDividerBracket color={"--background"} />
       <FamilyVita />
     </div>
   );
