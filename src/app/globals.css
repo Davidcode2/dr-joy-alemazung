@@ -60,6 +60,7 @@ body {
   --neutral-accent: hsl(30, 53%, 42%);
   --strong-accent: hsl(30, 85%, 41%);
   --ultralight-accent: hsl(30, 45%, 90%);
+  --megalight-accent: hsl(30, 45%, 97%);
   --grey-accent: hsl(30, 8%, 25%);
   --muted-accent: hsl(30, 15%, 35%);
   --primary: #deb887;
@@ -80,6 +81,7 @@ body {
   --strong-accent: hsl(180, 55%, 31%);
   --light-accent: hsl(172, 25%, 55%);
   --ultralight-accent: hsl(30, 15%, 55%);
+  --megalight-accent: hsl(30, 15%, 75%);
   --muted-accent: hsl(172, 15%, 55%);
   --grey-accent: hsl(172, 8%, 60%);
   --primary: hsl(129, 22%, 69%);
@@ -105,6 +107,7 @@ body {
   --grey-accent: hsl(30, 8%, 60%);
   --muted-accent: hsl(30, 15%, 55%);
   --ultralight-accent: hsl(30, 15%, 55%);
+  --megalight-accent: hsl(30, 15%, 75%);
   --primary: #deb887;
   --secondary: #f5deb3;
   --success: hsl(120, 40%, 60%);

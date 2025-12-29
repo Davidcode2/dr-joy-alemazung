@@ -76,10 +76,9 @@ export default async function Home({ params }: PropTypes) {
       <VerticalDividerBracket color={"--background"} />
       <Quote />
       <VerticalDividerBracket />
-      <div className="mx-4 md:mx-auto md:w-2/3">
-        <Experience />
-        <FamilyVita />
-      </div>
+      <Experience />
+      <VerticalDividerBracket color={"--megalight-accent"}/>
+      <FamilyVita />
     </div>
   );
 }

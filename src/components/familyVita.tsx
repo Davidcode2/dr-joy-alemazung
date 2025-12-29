@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function FamilyVita() {
   return (
-    <div className="mb-40">
-      <h2 className="text-center mt-0 pt-14 pb-40 md:pb-48 text-5xl lg:text-4xl text-foreground font-serif">
-        Vita
+    <div className="mx-4 md:mx-auto md:w-2/3 mb-40">
+      <h2 className="text-center mt-0 py-40 text-5xl lg:text-4xl text-foreground font-serif">
+        Über mich
       </h2>
       <div className="">
         <div className="flex items-center w-full justify-center">
