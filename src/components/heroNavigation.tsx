@@ -7,7 +7,7 @@ type HeroNavigationProps = {
 
 export default function HeroNavigation({ locale }: HeroNavigationProps) {
   return (
-    <div className="relative shadow-lg dark:shadow-gray-950 bottom-10 mx-10 lg:mx-20 bg-(--ultralight-accent) xl:grid xl:grid-cols-3 p-10 lg:p-20 2xl:p-28 xl:grid-rows-[auto_1fr_auto] gap-x-20">
+    <div className="rounded-lg relative shadow-lg dark:shadow-gray-950 bottom-10 mx-4 lg:mx-20 bg-(--ultralight-accent) xl:grid xl:grid-cols-3 p-10 lg:p-20 2xl:p-28 xl:grid-rows-[auto_1fr_auto] gap-x-20">
       <div className="contents p-10 lg:p-20 2xl:p-28">
         <h2 className="mb-4 xl:row-start-1 xl:col-start-1 text-2xl">
           Bürgermeisteramt
