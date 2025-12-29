@@ -6,7 +6,7 @@ type FooterProps = {
 
 export default function Footer({ locale }: FooterProps) {
   return (
-    <footer className="w-full border-t border-gray-300 dark:border-gray-700 bg-(--ultralight-accent)/20">
+    <footer className="w-full border-t border-(--ultralight-accent)/40 dark:border-gray-700 bg-(--ultralight-accent)/20">
       <div className="max-w-7xl mx-auto px-6 pt-62 pb-40">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
@@ -29,7 +29,7 @@ export default function Footer({ locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}`}
-                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
+                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
                   Home
                 </Link>
@@ -37,7 +37,7 @@ export default function Footer({ locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/buergermeisterliches`}
-                  className="text-(--grey-accent)/80 hover:text-(--grey-accent) transition"
+                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
                   Bürgermeisteramt
                 </Link>
@@ -45,7 +45,7 @@ export default function Footer({ locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/wissenschaft-und-publikationen`}
-                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
+                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
                   Wissenschaft und Publikationen
                 </Link>
@@ -53,7 +53,7 @@ export default function Footer({ locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/vortraege-und-medien`}
-                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
+                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
                   Medien und Vorträge
                 </Link>
@@ -63,19 +63,19 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-gray-700 dark:text-gray-300">
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-(--grey-accent)">
               Rechtliches
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href={`/${locale}/impressum`}
-                  className="text-(--grey-accent) hover:text-(--grey-accent) transition"
+                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
                   Impressum
                 </Link>
               </li>
-              <li className="text-(--grey-accent) hover:text-(--grey-accent) transition">
+              <li className="text-(--grey-accent)/70">
                 © {new Date().getFullYear()} Dr. Joy A. Alemazung. Alle Rechte
                 vorbehalten.
               </li>
