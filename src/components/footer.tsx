@@ -1,10 +1,19 @@
 import Link from "next/link";
+import { fetchAPI } from "../app/[lang]/utils/fetch-api";
 
 type FooterProps = {
   locale: string;
 };
 
-export default function Footer({ locale }: FooterProps) {
+type PageHeader = {
+  id: number;
+  documentId: string;
+  heading: string;
+  slug: string;
+};
+
+export default async function Footer({ locale }: FooterProps) {
+  const pageHeaders = await fetchAPI("/pages", { fields: ["heading", "slug"] });
   return (
     <footer className="w-full border-t border-(--ultralight-accent)/40 dark:border-gray-700 bg-(--ultralight-accent)/20">
       <div className="max-w-7xl mx-auto px-6 pt-62 pb-40">
@@ -34,30 +43,16 @@ export default function Footer({ locale }: FooterProps) {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  href={`/${locale}/buergermeisterliches`}
-                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
-                >
-                  Bürgermeisteramt
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/wissenschaft-und-publikationen`}
-                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
-                >
-                  Wissenschaft und Publikationen
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/${locale}/vortraege-und-medien`}
-                  className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
-                >
-                  Medien und Vorträge
-                </Link>
-              </li>
+              {pageHeaders.data.map((page: PageHeader) => (
+                <li key={page.id}>
+                  <Link
+                    href={`/${locale}/${page.slug}`}
+                    className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
+                  >
+                    {page.heading}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
