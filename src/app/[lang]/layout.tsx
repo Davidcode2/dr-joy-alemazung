@@ -3,7 +3,6 @@ import "../globals.css";
 import TopNavigation from "@/src/components/topNavigation";
 import { ThemeProvider } from "@/src/theme-provider";
 import Footer from "@/src/components/footer";
-import { fetchAPI } from "./utils/fetch-api";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,11 +18,10 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
 
-  const pageHeaders = await fetchAPI("/pages", { fields: ["heading"] });
   
   return (
     <ThemeProvider defaultTheme="light" enableSystem disableTransitionOnChange>
-      <TopNavigation locale={lang} headers={pageHeaders} />
+      <TopNavigation locale={lang} />
       {children}
       <Footer locale={lang} />
     </ThemeProvider>
