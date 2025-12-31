@@ -9,7 +9,7 @@ export default function Experience() {
         </h2>
         <div className="mx-auto xl:grid-cols-3 bg-(--ultralight-accent) rounded-lg grid md:gap-y-32 gap-x-20 ">
           <div className="relative p-10 xl:py-20">
-            <div className="absolute top-13 md:top-0 max-md:right-0 max-md:rotate-180 md:left-0 w-30 md:w-40 md:h-40 pointer-events-none -translate-y-1/2 max-md:translate-x-1/10 -translate-x-1/2 ">
+            <div className="absolute top-13 md:top-0 max-md:right-0 max-md:rotate-180 md:left-0 w-26 md:w-40 md:h-40 pointer-events-none -translate-y-1/2 max-md:translate-x-1/10 -translate-x-1/2 ">
               <ChevronIconSvg />
             </div>
             <div className="relative z-10 pr-6 xl:pr-0">
@@ -39,7 +39,7 @@ export default function Experience() {
           </div>
 
           <div className="relative p-10 xl:py-20">
-            <div className="absolute top-13 md:top-0 max-md:right-0 max-md:rotate-180 md:left-0 w-32 md:w-40 md:h-40 pointer-events-none -translate-y-1/2 max-md:translate-x-1/10 -translate-x-1/2 ">
+            <div className="absolute top-13 md:top-0 max-md:right-0 max-md:rotate-180 md:left-0 w-26 md:w-40 md:h-40 pointer-events-none -translate-y-1/2 max-md:translate-x-1/10 -translate-x-1/2 ">
               <ChevronIconSvg />
             </div>
             <div className="relative z-10 pr-6 xl:pr-0">
