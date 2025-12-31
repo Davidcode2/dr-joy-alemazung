@@ -41,7 +41,7 @@ export default async function Footer({ locale }: FooterProps) {
             </p>
             <ObfuscatedEmailButton
               encoded="bW9jLmxpYW1nQGdudXphbWVsYQ=="
-              label="Kontaktieren Sie mich!"
+              lang={locale}
             />
           </div>
 
