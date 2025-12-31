@@ -13,8 +13,8 @@ export default function MenuItems({ mobile, close, locale }: MenuItemsProps) {
         className={`flex ${mobile && "flex-col gap-y-10 justify-center text-center h-full items-center text-3xl"} gap-x-4`}
       >
         <li>
-          <Link href={`/${locale}`} className="mr-4 flex" onClick={close}>
-            <Home strokeWidth={1.2} />
+          <Link href={`/${locale}`} className="mr-4 flex font-serif" onClick={close}>
+            JAA
           </Link>
         </li>
         <li>
