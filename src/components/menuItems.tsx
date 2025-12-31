@@ -19,7 +19,7 @@ export default async function MenuItems({
   close,
   locale,
 }: MenuItemsProps) {
-  const pageHeaders = await fetchAPI("/pages", { fields: ["heading", "slug"] });
+  const pageHeaders = await fetchAPI("/pages", { fields: ["heading", "slug"] }, {}, locale);
   if (!pageHeaders.data) {
     return <div className="p-10">No page headers found</div>;
   }

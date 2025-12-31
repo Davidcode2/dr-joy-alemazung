@@ -13,7 +13,9 @@ type PageHeader = {
 };
 
 export default async function Footer({ locale }: FooterProps) {
-  const pageHeaders = await fetchAPI("/pages", { fields: ["heading", "slug"] });
+  const pageHeaders = await fetchAPI("/pages", { fields: ["heading", "slug"] }, {}, locale);
+  const homepageSubheading = await fetchAPI("/homepage", { fields: ["subHeading"] }, {}, locale);
+
   return (
     <footer className="w-full border-t border-(--ultralight-accent)/40 dark:border-gray-700 bg-(--ultralight-accent)/20">
       <div className="max-w-7xl mx-auto px-6 pt-62 pb-40">
@@ -24,8 +26,7 @@ export default async function Footer({ locale }: FooterProps) {
               Dr. Joy A. Alemazung
             </h3>
             <p className="text-sm text-(--gray-accent)">
-              Bürgermeister, Wissenschaftler und Experte für Nachhaltigkeit und
-              Migration
+            { homepageSubheading.data && homepageSubheading.data.subHeading }
             </p>
           </div>
 

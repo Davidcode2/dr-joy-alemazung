@@ -1,5 +1,4 @@
 import MenuItems from "@/src/components/menuItems";
-import { fetchAPI } from "../app/[lang]/utils/fetch-api";
 import MobileMenu from "./mobileMenu";
 import ThemeSwitcher from "./themeSwitcher";
 import LanguageSwitcher from "./languageSwitcher";
@@ -9,8 +8,6 @@ type TopNavigationProps = {
 };
 
 export default async function TopNavigation({ locale }: TopNavigationProps) {
-  const pageHeaders = await fetchAPI("/pages", { fields: ["heading"] });
-  console.log("Page Headers:", pageHeaders);
 
   return (
     <div className="m-4 flex">
