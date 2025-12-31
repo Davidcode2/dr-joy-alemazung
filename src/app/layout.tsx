@@ -23,55 +23,41 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Immoly - Immobilienfinanzierung",
-  description:
-    "Interaktiver Tilgungsrechner der mehr kann. Berechne Deine Finanzierungsmöglichkeiten mit Sondertilgungen und Tilgungswechseln in Echtzeit. Keine Registrierung, Keine Cookies, Keine Datensammlung.",
+  title: {
+    default: "Dr. Joy A. Alemazung - Bürgermeister von Heubach",
+    template: "%s | Dr. Joy A. Alemazung"
+  },
+  description: "Dr. Joy A. Alemazung ist Bürgermeister von Heubach und Wissenschaftler mit Expertise in Nachhaltigkeit, Migrationspolitik und internationalen Beziehungen.",
   keywords: [
-    "Immobilienfinanzierung",
-    "Hauskredit",
-    "Tilgungsrechner",
-    "Zinsrechner",
-    "Immobilien",
-    "Baufinanzierung",
-    "Tilgungstabelle",
+    "Dr. Joy A. Alemazung",
+    "Bürgermeister Heubach",
+    "Mayor Heubach",
+    "Nachhaltigkeit",
+    "Sustainability",
+    "Migrationspolitik",
+    "Migration Policy",
+    "Internationale Beziehungen",
+    "International Relations",
+    "Wissenschaft",
+    "Publications",
   ],
-  authors: [{ name: "Jakob Lingel" }],
-  creator: "Jakob Lingel",
-  publisher: "Immoly",
-  metadataBase: new URL("https://immoly.io"),
+  authors: [{ name: "Dr. Joy A. Alemazung" }],
+  creator: "Dr. Joy A. Alemazung",
+  metadataBase: new URL("https://alemazung.com"),
   alternates: {
-    canonical: "https://immoly.io",
+    canonical: "https://alemazung.com",
+    languages: {
+      'de': '/de',
+      'en': '/en',
+    },
   },
   openGraph: {
-    title: "Immoly – Dein smarter Immobilienfinanzierungsrechner",
-    description:
-      "Berechne Deine Immobilienfinanzierung mit Immoly. Erhalte Tilgungstabellen und Visualisierungen in Sekunden.",
-    url: "https://immoly.io",
-    siteName: "Immoly",
-    images: [
-      {
-        url: "/og_image.png",
-        width: 1200,
-        height: 630,
-        alt: "Immoly Immobilienfinanzierung – Screenshot",
-      },
-    ],
+    title: "Dr. Joy A. Alemazung - Bürgermeister von Heubach",
+    description: "Bürgermeister von Heubach und Wissenschaftler mit Expertise in Nachhaltigkeit, Migrationspolitik und internationalen Beziehungen.",
+    url: "https://alemazung.com",
+    siteName: "Dr. Joy A. Alemazung",
     locale: "de_DE",
     type: "website",
-  },
-  icons: {
-    icon: [
-      {
-        url: "/images/favicons/favicon-light.svg",
-        media: "(prefers-color-scheme: light)",
-        type: "image/svg+xml",
-      },
-      {
-        url: "/images/favicons/favicon-dark.svg",
-        media: "(prefers-color-scheme: dark)",
-        type: "image/svg+xml",
-      },
-    ],
   },
 };
 
