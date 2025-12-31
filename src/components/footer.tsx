@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fetchAPI } from "../app/[lang]/utils/fetch-api";
+import ObfuscatedEmailButton from "./obfuscatedEmailButton";
 
 type FooterProps = {
   locale: string;
@@ -13,8 +14,18 @@ type PageHeader = {
 };
 
 export default async function Footer({ locale }: FooterProps) {
-  const pageHeaders = await fetchAPI("/pages", { fields: ["heading", "slug"] }, {}, locale);
-  const homepageSubheading = await fetchAPI("/homepage", { fields: ["subHeading"] }, {}, locale);
+  const pageHeaders = await fetchAPI(
+    "/pages",
+    { fields: ["heading", "slug"] },
+    {},
+    locale,
+  );
+  const homepageSubheading = await fetchAPI(
+    "/homepage",
+    { fields: ["subHeading"] },
+    {},
+    locale,
+  );
 
   return (
     <footer className="w-full border-t border-(--ultralight-accent)/40 dark:border-gray-700 bg-(--ultralight-accent)/20">
@@ -26,8 +37,12 @@ export default async function Footer({ locale }: FooterProps) {
               Dr. Joy A. Alemazung
             </h3>
             <p className="text-sm text-(--gray-accent)">
-            { homepageSubheading.data && homepageSubheading.data.subHeading }
+              {homepageSubheading.data && homepageSubheading.data.subHeading}
             </p>
+            <ObfuscatedEmailButton
+              encoded="bW9jLmxpYW1nQGdudXphbWVsYQ=="
+              label="Kontaktieren Sie mich!"
+            />
           </div>
 
           {/* Main Sections */}

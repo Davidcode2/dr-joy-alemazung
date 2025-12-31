@@ -1,4 +1,5 @@
 import BackButton from "@/src/components/backButton";
+import ObfuscatedEmail from "@/src/components/obfuscatedEmail";
 import { impressumDE } from "@/src/content/impressum/de";
 import { impressumEN } from "@/src/content/impressum/en";
 import type { ImpressumContent } from "@/src/content/impressum/types";
@@ -41,15 +42,10 @@ export default async function Impressum({ params }: PropTypes) {
             {content.sections.contact.heading}
           </h2>
           <div className="space-y-2">
-            <p>
-              <span className="font-semibold">{content.sections.contact.emailLabel}</span>{" "}
-              <a
-                href={`mailto:${content.sections.contact.email}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                {content.sections.contact.email}
-              </a>
-            </p>
+            <ObfuscatedEmail
+              encoded="bW9jLmhjaGFidWVoQG9mbmk="
+              label={content.sections.contact.emailLabel}
+            />
           </div>
         </section>
 
