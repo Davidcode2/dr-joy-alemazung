@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import MenuItems from "@/src/components/menuItems";
-import { Equal, Sun, X } from "lucide-react";
+import { Equal, Globe, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 
 type TopNavigationProps = {
@@ -42,6 +42,13 @@ export default function TopNavigation({ locale }: TopNavigationProps) {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const toggleLanguage = () => {
+    const newLocale = locale === "de-DE" ? "en" : "de-DE";
+    const currentPath = window.location.pathname;
+    const newPath = currentPath.replace(`/${locale}`, `/${newLocale}`);
+    window.location.href = newPath;
+  }
+
   return (
     <div className="m-4 flex">
       {showMobileMenu && (
@@ -52,7 +59,11 @@ export default function TopNavigation({ locale }: TopNavigationProps) {
           >
             <X />
           </div>
-          <MenuItems mobile={true} close={() => setShowMobileMenu(false)} locale={locale} />
+          <MenuItems
+            mobile={true}
+            close={() => setShowMobileMenu(false)}
+            locale={locale}
+          />
         </div>
       )}
       <div
@@ -64,8 +75,15 @@ export default function TopNavigation({ locale }: TopNavigationProps) {
       <div className="md:block hidden">
         <MenuItems locale={locale} />
       </div>
-      <div className="ml-auto" onClick={toggleTheme}>
-        <Sun />
+      <div className="ml-auto">
+        <ul className="flex gap-x-4">
+          <li>
+            <Globe onClick={toggleLanguage} />
+          </li>
+          <li onClick={toggleTheme}>
+            {theme && theme!.includes("dark") ? <Sun /> : <Moon />}
+          </li>
+        </ul>
       </div>
     </div>
   );
