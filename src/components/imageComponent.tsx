@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getStrapiMedia } from "../app/[lang]/utils/api-helpers";
 
-export default function ImageComponent({ image }: { image: any } ) {
+export default async function ImageComponent({ image }: { image: any } ) {
   return (
     <div className="my-6">
       <Image

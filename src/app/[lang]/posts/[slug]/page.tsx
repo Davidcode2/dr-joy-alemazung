@@ -11,8 +11,6 @@ type PropTypes = {
 export default async function Post({ params }: PropTypes) {
   const { lang, slug } = await params;
   const locale = normalizeLocale(lang);
-
-  console.log(slug);
   const urlParamsObject = {
     filters: { slug },
     populate: {
@@ -21,7 +19,6 @@ export default async function Post({ params }: PropTypes) {
   };
   const response = await fetchAPI(`/posts`, urlParamsObject, {}, locale);
   const post = response?.data?.[0];
-  console.log(post);
 
   return (
     <div className="mx-8 sm:max-w-xl md:mx-auto my-12 lg:max-w-4xl ">
