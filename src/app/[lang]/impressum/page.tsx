@@ -43,7 +43,7 @@ export default async function Impressum({ params }: PropTypes) {
           </h2>
           <div className="space-y-2">
             <ObfuscatedEmail
-              encoded="bW9jLmhjaGFidWVoQG9mbmk="
+              encoded="ZWQuaGNhYnVlaEBvZm5pCg=="
               label={content.sections.contact.emailLabel}
             />
           </div>
