@@ -4,7 +4,19 @@ import { Equal, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import MenuItems from "./menuItems";
 
-export default function MobileMenu({ locale }: { locale: string }) {
+type PageHeader = {
+  id: number;
+  documentId: string;
+  heading: string;
+  slug: string;
+};
+
+type MobileMenuProps = {
+  locale: string;
+  pageHeaders: PageHeader[];
+};
+
+export default function MobileMenu({ locale, pageHeaders }: MobileMenuProps) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
@@ -41,6 +53,7 @@ export default function MobileMenu({ locale }: { locale: string }) {
             mobile={true}
             close={() => setShowMobileMenu(false)}
             locale={locale}
+            pageHeaders={pageHeaders}
           />
         </div>
       )}
