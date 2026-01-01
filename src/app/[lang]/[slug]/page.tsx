@@ -3,6 +3,7 @@ import { getStrapiMedia } from "../utils/api-helpers";
 import { normalizeLocale } from "../utils/locale-helpers";
 import SmallHeroImage from "@/src/components/shortHeroImage";
 import PostGrid from "@/src/components/postGrid";
+import Publication from "@/src/components/publication";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;
@@ -11,7 +12,7 @@ type PropTypes = {
 export default async function SubPage({ params }: PropTypes) {
   const { lang, slug } = await params;
   const locale = normalizeLocale(lang);
-  
+
   const path = `/pages`;
   const urlParamsObject = {
     filters: { slug: slug },
@@ -33,13 +34,16 @@ export default async function SubPage({ params }: PropTypes) {
     <div>
       <SmallHeroImage url={imageUrl} />
       <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-semibold font-serif">{data.heading}</h1>
+        <h1 className="text-4xl md:text-7xl font-semibold font-serif">
+          {data.heading}
+        </h1>
         <h2 className="text-3xl font-semibold">{data.subHeading}</h2>
         <section className="py-10">
           <p className="max-w-4xl text-lg leading-8 text-(--muted-accent)">
             {data.content[0].children[0].text}
           </p>
         </section>
+        <Publication />
         <PostGrid posts={data.posts} locale={locale} />
       </div>
     </div>
