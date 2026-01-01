@@ -43,7 +43,6 @@ export default async function SubPage({ params }: PropTypes) {
             {data.content[0].children[0].text}
           </p>
         </section>
-        <Publication />
         <PostGrid posts={data.posts} locale={locale} />
       </div>
     </div>
