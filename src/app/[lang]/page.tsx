@@ -98,3 +98,4 @@ export default async function Home({ params }: PropTypes) {
     </div>
   );
 }
+
