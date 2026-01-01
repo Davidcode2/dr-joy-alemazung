@@ -1,31 +1,17 @@
 import Image from "next/image";
+import StrapiRichText from "./strapiRichText";
 
-export default function DescriptionText() {
+export default function DescriptionText({ content }: { content: any }) {
   return (
     <>
       <div className="pb-40 lg:pt-28">
         <div className="flex flex-col xl:grid xl:grid-cols-[60%_40%] lg:gap-x-10 mx-10 lg:mx-20 xl:mx-60 2xl:mx-90">
           <div className="order-2 xl:order-1 z-30">
-            <section className="">
-              <p className="z-30 lg:text-2xl leading-7 lg:leading-12">
-                Dr. Joy A. Alemazung verkörpert die Brücke zwischen lokaler
-                Verantwortung und globaler Perspektive. Geboren in Kamerun und
-                heute Bürgermeister der Stadt Heubach, verbindet er seine
-                wissenschaftliche Expertise als Sozialwissenschaftler mit
-                praktischer politischer Arbeit. Sein Engagement geht dabei weit
-                über das Rathaus hinaus: Als Mitglied der CDU und Experte für
-                Nachhaltigkeit, Migration und internationale Politik bringt er
-                seine Erkenntnisse in zahlreiche öffentliche Debatten und
-                Gremien ein. Ob als HeForShe-Botschafter der UN Women, Mitglied
-                des Kreistags oder durch seine Arbeit an Projekten zur
-                nachhaltigen Entwicklung – Dr. Alemazung ist überzeugt, dass
-                globale Herausforderungen nur durch ein starkes,
-                gemeinschaftliches Handeln auf lokaler Ebene gemeistert werden
-                können. Seine Biografie ist ein eindrucksvolles Beispiel dafür,
-                wie Empathie, interkulturelles Verständnis und ein unermüdlicher
-                Einsatz für das Gemeinwohl das Leben von Menschen nachhaltig
-                positiv beeinflussen können.
-              </p>
+            <section className="z-30 lg:text-2xl ">
+              <StrapiRichText
+                content={content}
+                className="leading-7 lg:leading-12"
+              />
             </section>
           </div>
           <div className="py-20 xl:py-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-4xl md:text-7xl lg:text-7xl text-(--accent)">

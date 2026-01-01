@@ -50,7 +50,7 @@ export default async function Home({ params }: PropTypes) {
         headerImage: { fields: ["url"] },
         navigationElements: { populate: "*" },
       },
-      fields: ["heading", "subHeading"],
+      fields: ["heading", "subHeading", "content"],
     };
     const responseData = await fetchAPI(path, urlParamsObject, {}, locale);
     return responseData.data;
@@ -89,7 +89,7 @@ export default async function Home({ params }: PropTypes) {
           locale={lang}
           navigationElements={data.navigationElements}
         />
-      <DescriptionText />
+      <DescriptionText content={data.content} />
       <VerticalDividerBracket color={"--background"} />
       <Quote />
       <VerticalDividerBracket />
