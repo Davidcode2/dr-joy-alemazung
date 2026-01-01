@@ -130,7 +130,7 @@ const renderNode = (node: RichTextNode, index: number): React.ReactNode => {
   switch (blockNode.type) {
     case "paragraph":
       return (
-        <p key={index} className="whitespace-pre-line text-foreground">
+        <p key={index} className="whitespace-pre-line text-foreground pb-4">
           {blockNode.children.map((child, i) => renderNode(child, i))}
         </p>
       );
