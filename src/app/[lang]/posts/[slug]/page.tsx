@@ -24,7 +24,7 @@ export default async function Post({ params }: PropTypes) {
   console.log(post);
 
   return (
-    <div className="mx-auto my-12 max-w-4xl ">
+    <div className="mx-8 sm:max-w-xl md:mx-auto my-12 lg:max-w-4xl ">
       <BackButton />
       <div className="pb-6 grid gap-y-2">
         <h2 className="text-5xl font-serif">{post.heading}</h2>
