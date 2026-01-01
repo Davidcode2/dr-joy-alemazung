@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "api.alemazung.immoly.io",
+        port: "",
         pathname: "/uploads/**",
       },
     ],
