@@ -17,7 +17,7 @@ export default function FamilyVita() {
           />
         </div>
         <div className="bg-(--ultralight-accent) mx-auto rounded-b-lg">
-          <ul className="px-6 md:px-10 lg:mx-auto text-gray-800 flex justify-center h-full flex-col">
+          <ul className="px-6 md:px-10 lg:mx-auto flex justify-center h-full flex-col">
             <li className="border-b border-(--light-accent) py-10 my-0 flex gap-x-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

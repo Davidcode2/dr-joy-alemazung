@@ -33,24 +33,6 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-[data-theme="_light"] {
-  --background: hsl(1, 0%, 100%);
-  --foreground: hsl(194, 33%, 12%);
-  --dark-accent: hsl(194, 33%, 18%);
-  --neutral-accent: hsl(194, 33%, 22%);
-  --accent: hsl(195, 37%, 40%);
-  --strong-accent: hsl(180, 55%, 31%);
-  --light-accent: hsl(172, 25%, 55%);
-  --ultralight-accent: hsl(172, 25%, 95%);
-  --muted-accent: hsl(172, 15%, 35%);
-  --grey-accent: hsl(172, 10%, 80%);
-  --primary: hsl(129, 22%, 69%);
-  --secondary: hsl(95, 32%, 82%);
-  --success: hsl(120, 40%, 60%);
-  --dark-success: hsl(120, 40%, 50%);
-  --alert: hsl(20, 70%, 60%);
-}
-
 [data-theme="light"] {
   --background: #ffffff;
   --foreground: #3b2f2f;
@@ -70,75 +52,27 @@ body {
   --alert: #ff4500;
 }
 
-[data-theme="__dark"] {
-  @apply text-slate-100;
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --ultra-accent: hsl(194, 13%, 12%);
-  --dark-accent: hsl(194, 33%, 18%);
-  --neutral-accent: hsl(194, 33%, 22%);
-  --accent: hsl(195, 37%, 40%);
-  --strong-accent: hsl(180, 55%, 31%);
-  --light-accent: hsl(172, 25%, 55%);
-  --ultralight-accent: hsl(30, 15%, 55%);
-  --megalight-accent: hsl(30, 15%, 75%);
-  --muted-accent: hsl(172, 15%, 55%);
-  --grey-accent: hsl(172, 8%, 60%);
-  --primary: hsl(129, 22%, 69%);
-  --secondary: hsl(95, 32%, 82%);
-  --success: hsl(120, 40%, 60%);
-  --dark-success: hsl(120, 40%, 50%);
-  --alert: hsl(20, 70%, 60%);
-  ::selection {
-    background: hsl(172, 10%, 18%);
-  }
-}
-
 [data-theme="dark"] {
   @apply text-slate-100;
-  --background: hsl(10, 99%, 1%);
-  --ultra-accent: hsl(10, 13%, 12%);
-  --foreground: #f5f5dc;
-  --dark-accent: #6b4c4c;
-  --accent: hsl(30, 83%, 82%);
-  --light-accent: #d2b48c;
-  --neutral-accent: hsl(30, 53%, 42%);
-  --strong-accent: hsl(30, 85%, 41%);
-  --grey-accent: hsl(30, 8%, 60%);
-  --muted-accent: hsl(30, 15%, 55%);
-  --ultralight-accent: hsl(30, 15%, 35%);
-  --megalight-accent: hsl(30, 15%, 25%);
-  --primary: #deb887;
-  --secondary: #f5deb3;
-  --success: hsl(120, 40%, 60%);
-  --dark-success: hsl(120, 40%, 50%);
-  --alert: #ff4500;
+  --background: hsl(30, 12%, 10%);
+  --ultra-accent: hsl(30, 15%, 15%);
+  --foreground: hsl(30, 20%, 92%);
+  --dark-accent: hsl(30, 25%, 65%);
+  --accent: hsl(30, 40%, 62%);
+  --light-accent: hsl(30, 35%, 70%);
+  --neutral-accent: hsl(30, 38%, 48%);
+  --strong-accent: hsl(30, 50%, 55%);
+  --grey-accent: hsl(30, 12%, 65%);
+  --muted-accent: hsl(30, 18%, 60%);
+  --ultralight-accent: hsl(30, 18%, 20%);
+  --megalight-accent: hsl(30, 15%, 14%);
+  --primary: hsl(30, 40%, 58%);
+  --secondary: hsl(30, 35%, 65%);
+  --success: hsl(120, 35%, 55%);
+  --dark-success: hsl(120, 35%, 48%);
+  --alert: hsl(15, 85%, 58%);
 
   ::selection {
-    background: hsl(30, 10%, 18%);
-  }
-}
-
-[data-theme="_dark"] {
-  @apply text-slate-100;
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --ultra-accent: hsl(194, 13%, 12%);
-  --dark-accent: hsl(194, 33%, 18%);
-  --neutral-accent: hsl(194, 33%, 22%);
-  --accent: hsl(195, 37%, 40%);
-  --strong-accent: hsl(180, 55%, 31%);
-  --light-accent: hsl(172, 25%, 55%);
-  --ultralight-accent: hsl(102, 35%, 90%);
-  --muted-accent: hsl(172, 15%, 55%);
-  --grey-accent: hsl(172, 8%, 60%);
-  --primary: hsl(129, 22%, 69%);
-  --secondary: hsl(95, 32%, 82%);
-  --success: hsl(120, 40%, 60%);
-  --dark-success: hsl(120, 40%, 50%);
-  --alert: hsl(20, 70%, 60%);
-
-  ::selection {
-    background: hsl(172, 10%, 18%);
+    background: hsl(30, 25%, 25%);
   }
 }
