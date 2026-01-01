@@ -37,7 +37,8 @@ export default async function Home({ params }: PropTypes) {
       const data = await fetchData();
       return data;
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching homepage data:", error);
+      throw error; // Re-throw to handle at page level
     }
   };
 
@@ -47,13 +48,26 @@ export default async function Home({ params }: PropTypes) {
       sort: { createdAt: "desc" },
       populate: {
         headerImage: { fields: ["url"] },
+        navigationElements: { populate: "*" },
       },
+      fields: ["heading", "subHeading"],
     };
     const responseData = await fetchAPI(path, urlParamsObject, {}, locale);
     return responseData.data;
   };
 
   const data = await getData();
+
+  // Add safety checks
+  if (!data || !data.headerImage) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-xl text-gray-600 dark:text-gray-400">
+          Error loading homepage content. Please try again later.
+        </p>
+      </div>
+    );
+  }
 
   const imageUrl = getStrapiMedia(data.headerImage.url)!;
 
@@ -71,7 +85,10 @@ export default async function Home({ params }: PropTypes) {
           </div>
         </div>
       </HeroImage>
-      <HeroNavigation locale={lang} />
+        <HeroNavigation
+          locale={lang}
+          navigationElements={data.navigationElements}
+        />
       <DescriptionText />
       <VerticalDividerBracket color={"--background"} />
       <Quote />
