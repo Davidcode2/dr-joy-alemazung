@@ -1,5 +1,5 @@
-import BackButton from "@/src/components/backButton";
-import ObfuscatedEmail from "@/src/components/obfuscatedEmail";
+import BackButton from "@/src/components/shared/backButton";
+import ObfuscatedEmail from "@/src/components/shared/obfuscatedEmail";
 import { impressumDE } from "@/src/content/impressum/de";
 import { impressumEN } from "@/src/content/impressum/en";
 import type { ImpressumContent } from "@/src/content/impressum/types";

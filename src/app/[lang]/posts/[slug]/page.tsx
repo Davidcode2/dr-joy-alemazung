@@ -1,8 +1,8 @@
 import { fetchAPI } from "../../utils/fetch-api";
-import BackButton from "@/src/components/backButton";
-import StrapiRichText from "@/src/components/strapiRichText";
+import BackButton from "@/src/components/shared/backButton";
+import StrapiRichText from "@/src/components/post/strapiRichText";
 import { normalizeLocale } from "../../utils/locale-helpers";
-import ImageComponent from "@/src/components/imageComponent";
+import ImageComponent from "@/src/components/post/imageComponent";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;

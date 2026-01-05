@@ -1,8 +1,8 @@
-import MenuItems from "@/src/components/menuItems";
+import MenuItems from "./menuItems";
 import MobileMenu from "./mobileMenu";
 import ThemeSwitcher from "./themeSwitcher";
 import LanguageSwitcher from "./languageSwitcher";
-import { fetchAPI } from "../app/[lang]/utils/fetch-api";
+import { fetchAPI } from "../../app/[lang]/utils/fetch-api";
 
 type TopNavigationProps = {
   locale: string;

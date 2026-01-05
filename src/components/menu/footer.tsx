@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { fetchAPI } from "../app/[lang]/utils/fetch-api";
-import ObfuscatedEmailButton from "./obfuscatedEmailButton";
+import { fetchAPI } from "../../app/[lang]/utils/fetch-api";
+import ObfuscatedEmailButton from "../shared/obfuscatedEmailButton";
 
 type FooterProps = {
   locale: string;

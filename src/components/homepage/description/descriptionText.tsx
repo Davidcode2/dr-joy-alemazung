@@ -1,5 +1,5 @@
 import Image from "next/image";
-import StrapiRichText from "./strapiRichText";
+import StrapiRichText from "../../post/strapiRichText";
 
 export default function DescriptionText({ content }: { content: any }) {
   return (

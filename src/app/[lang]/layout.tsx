@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import TopNavigation from "@/src/components/topNavigation";
+import TopNavigation from "@/src/components/menu/topNavigation";
 import { ThemeProvider } from "@/src/theme-provider";
-import Footer from "@/src/components/footer";
+import Footer from "@/src/components/menu/footer";
 
 export const metadata: Metadata = {
   title: {

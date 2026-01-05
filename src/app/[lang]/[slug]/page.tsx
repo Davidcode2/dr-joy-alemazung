@@ -1,9 +1,9 @@
 import { fetchAPI } from "../utils/fetch-api";
 import { getStrapiMedia } from "../utils/api-helpers";
 import { normalizeLocale } from "../utils/locale-helpers";
-import SmallHeroImage from "@/src/components/shortHeroImage";
-import PostGrid from "@/src/components/postGrid";
-import Publication from "@/src/components/publication";
+import SmallHeroImage from "@/src/components/homepage/shortHeroImage";
+import PostGrid from "@/src/components/posts/postGrid";
+import Publication from "@/src/components/homepage/publication";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;

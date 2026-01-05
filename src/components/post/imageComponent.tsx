@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getStrapiMedia } from "../app/[lang]/utils/api-helpers";
+import { getStrapiMedia } from "../../app/[lang]/utils/api-helpers";
 
 export default async function ImageComponent({ image }: { image: any } ) {
   return (

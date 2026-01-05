@@ -1,13 +1,13 @@
 import { fetchAPI } from "./utils/fetch-api";
 import { getStrapiMedia } from "./utils/api-helpers";
 import { normalizeLocale } from "./utils/locale-helpers";
-import HeroImage from "@/src/components/heroImage";
-import HeroNavigation from "@/src/components/heroNavigation";
-import DescriptionText from "@/src/components/descriptionText";
-import Quote from "@/src/components/quote";
-import FamilyVita from "@/src/components/familyVita";
-import Experience from "@/src/components/experience";
-import VerticalDividerBracket from "@/src/components/verticalDividerBracket";
+import HeroImage from "@/src/components/homepage/heroImage";
+import HeroNavigation from "@/src/components/homepage/heroNavigation";
+import DescriptionText from "@/src/components/homepage/description/descriptionText";
+import Quote from "@/src/components/homepage/quote/quote";
+import FamilyVita from "@/src/components/homepage/familyVita/familyVita";
+import Experience from "@/src/components/homepage/experience/experience";
+import VerticalDividerBracket from "@/src/components/shared/verticalDividerBracket";
 
 export async function generateStaticParams() {
   // Fetch all slugs from Strapi

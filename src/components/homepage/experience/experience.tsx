@@ -1,4 +1,4 @@
-import ChevronIconSvg from "./chevronIconSvg";
+import ChevronIconSvg from "../../shared/chevronIconSvg";
 
 export default function Experience() {
   return (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MoreButton from "./moreButton";
+import MoreButton from "../shared/moreButton";
 
 type PropTypes = {
   post: any;
