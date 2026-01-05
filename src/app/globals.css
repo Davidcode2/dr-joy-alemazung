@@ -35,6 +35,32 @@ body {
 
 [data-theme="light"] {
   --background: #ffffff;
+  --foreground: hsl(220, 25%, 18%);
+
+  --dark-accent: hsl(220, 35%, 28%);
+  --accent: hsl(220, 45%, 40%);
+  --light-accent: hsl(220, 55%, 65%);
+
+  --neutral-accent: hsl(220, 35%, 42%);
+  --strong-accent: hsl(220, 70%, 38%);
+
+  --ultralight-accent: hsl(220, 45%, 90%);
+  --megalight-accent: hsl(220, 45%, 97%);
+
+  --grey-accent: hsl(220, 10%, 35%);
+  --muted-accent: hsl(220, 15%, 45%);
+
+  --primary: hsl(220, 55%, 60%);
+  --secondary: hsl(220, 60%, 72%);
+
+  --success: hsl(140, 40%, 55%);
+  --dark-success: hsl(140, 40%, 45%);
+  --alert: hsl(10, 85%, 55%);
+}
+
+
+[data-theme="_light"] {
+  --background: #ffffff;
   --foreground: #3b2f2f;
   --dark-accent: #6b4c4c;
   --accent: #a0522d;
