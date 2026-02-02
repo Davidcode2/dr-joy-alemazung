@@ -95,7 +95,7 @@ export default function DesktopNav({ locale, navGroups, pageHeaders }: DesktopNa
     return (
       <ul className="flex items-center gap-x-1">
         <li>
-          <Link href={`/${locale}`} className="px-3 py-2 font-serif text-sm font-medium">
+          <Link href={`/${locale}`} className="px-3 py-2 font-serif text-sm">
             JAA
           </Link>
         </li>
