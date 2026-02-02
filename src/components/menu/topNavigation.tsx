@@ -9,22 +9,36 @@ type TopNavigationProps = {
 };
 
 export default async function TopNavigation({ locale }: TopNavigationProps) {
-  const pageHeaders = await fetchAPI(
-    "/pages",
-    { fields: ["heading", "slug"] },
-    {},
-    locale
-  );
+  const [pageHeaders, navGroupsResponse] = await Promise.all([
+    fetchAPI("/pages", { fields: ["heading", "slug"] }, {}, locale),
+    fetchAPI(
+      "/navigation-groups",
+      {
+        populate: {
+          pages: { fields: ["heading", "slug"] },
+        },
+        sort: ["order:asc"],
+      },
+      {},
+      locale
+    ),
+  ]);
 
   if (!pageHeaders.data) {
     return <div className="m-4 flex">No navigation data available</div>;
   }
 
+  const navGroups = navGroupsResponse?.data ?? [];
+
   return (
     <div className="m-4 flex items-center">
       <MobileMenu locale={locale} pageHeaders={pageHeaders.data} />
       <div className="md:block hidden">
-        <DesktopNav locale={locale} pageHeaders={pageHeaders.data} />
+        <DesktopNav
+          locale={locale}
+          navGroups={navGroups}
+          pageHeaders={pageHeaders.data}
+        />
       </div>
       <div className="ml-auto">
         <ul className="flex gap-x-4">
