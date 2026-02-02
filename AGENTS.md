@@ -233,6 +233,20 @@ if (pages.error) {
 2. Content is fetched as JSON blocks
 3. Render with `<StrapiRichText content={blocks} />`
 
+## CMS Repository
+
+The Strapi CMS that powers this frontend lives in a separate repository:
+
+👉 **[`Davidcode2/alemazung_cms`](https://github.com/Davidcode2/alemazung_cms)**
+
+**Read the [`AGENTS.md`](https://github.com/Davidcode2/alemazung_cms/blob/main/AGENTS.md) in that repo** for:
+- Strapi API base URL and authentication setup
+- How to query content types (Homepage, Pages, Posts)
+- How to update content via the API
+- Localization and content structure notes
+
+Always consult the CMS AGENTS.md when working on data-fetching, content rendering, or anything that touches the Strapi API.
+
 ## Useful Links
 
 - **Strapi Docs**: https://docs.strapi.io
