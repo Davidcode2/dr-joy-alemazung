@@ -66,7 +66,7 @@ function DropdownGroup({
           }
         `}
       >
-        <div className="bg-(--background)/90 border border-(--ultralight-accent)/60 rounded-b-lg shadow-lg backdrop-blur-md p-20 min-w-[800px]">
+        <div className="bg-(--background)/90 border border-(--ultralight-accent)/60 rounded-b-lg shadow-lg backdrop-blur-md p-20 xl:min-w-[800px]">
           <div
               className="text-[var(--muted-accent)]/80"
           >
