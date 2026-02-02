@@ -51,7 +51,7 @@ function DropdownGroup({
     >
       <Link
         href={`/${locale}/${group.slug}`}
-        className="px-3 py-2 text-sm font-medium transition-colors hover:text-(--accent)"
+        className="px-3 py-2 transition-colors hover:text-(--accent)"
       >
         {group.label}
       </Link>
@@ -71,7 +71,7 @@ function DropdownGroup({
             <Link
               key={page.id}
               href={`/${locale}/${page.slug}`}
-              className="block px-4 py-2.5 text-sm transition-colors hover:bg-(--ultralight-accent)/40 hover:text-(--accent)"
+              className="block px-4 py-2.5 transition-colors hover:bg-(--ultralight-accent)/40 hover:text-(--accent)"
             >
               {page.heading}
             </Link>
