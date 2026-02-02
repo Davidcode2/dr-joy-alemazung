@@ -46,11 +46,11 @@ export default async function SubPage({ params }: PropTypes) {
     <div>
       {heroImageUrl && <SmallHeroImage url={heroImageUrl} />}
       <div className="mx-auto max-w-5xl p-10">
-        <h1 className="text-4xl md:text-7xl font-semibold font-serif mb-4">
+        <h1 className="text-4xl md:text-7xl font-semibold font-serif">
           {page.heading}
         </h1>
         {page.subHeading && (
-          <h2 className="text-3xl font-semibold">{page.subHeading}</h2>
+          <h2 className="text-3xl font-serif italic text-[var(--muted-accent)] mt-6">{page.subHeading}</h2>
         )}
         {content.length > 0 && (
           <section className="pt-8 pb-10">
