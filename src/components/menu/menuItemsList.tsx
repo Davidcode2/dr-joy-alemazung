@@ -24,7 +24,7 @@ export default function MenuItemsList({
 }: MenuItemsListProps) {
   return (
     <ul
-      className={`flex ${mobile && "flex-col gap-y-10 justify-center text-center h-full items-center text-3xl"} gap-x-4`}
+      className={`flex ${mobile && "flex-col gap-y-6 justify-center text-center h-full items-center text-xl"} gap-x-4`}
     >
       <li>
         <Link

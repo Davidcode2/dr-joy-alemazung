@@ -1,4 +1,4 @@
-import MenuItems from "./menuItems";
+import DesktopNav from "./desktopNav";
 import MobileMenu from "./mobileMenu";
 import ThemeSwitcher from "./themeSwitcher";
 import LanguageSwitcher from "./languageSwitcher";
@@ -21,10 +21,10 @@ export default async function TopNavigation({ locale }: TopNavigationProps) {
   }
 
   return (
-    <div className="m-4 flex">
+    <div className="m-4 flex items-center">
       <MobileMenu locale={locale} pageHeaders={pageHeaders.data} />
       <div className="md:block hidden">
-        <MenuItems locale={locale} pageHeaders={pageHeaders.data} />
+        <DesktopNav locale={locale} pageHeaders={pageHeaders.data} />
       </div>
       <div className="ml-auto">
         <ul className="flex gap-x-4">
