@@ -11,48 +11,12 @@ type PageHeader = {
 };
 
 type NavGroup = {
+  id: number;
   label: string;
   slug: string;
-  children: PageHeader[];
+  order: number;
+  pages: PageHeader[];
 };
-
-function groupPages(pages: PageHeader[]): NavGroup[] {
-  const slugMap = new Map(pages.map((p) => [p.slug, p]));
-
-  const groups: NavGroup[] = [
-    {
-      label: "Politik & Amt",
-      slug: "buergermeisterliches",
-      children: [
-        "buergermeisterliches",
-        "aktuelles-und-positionen",
-        "engagement-und-ehrenamt",
-      ]
-        .map((s) => slugMap.get(s))
-        .filter(Boolean) as PageHeader[],
-    },
-    {
-      label: "Wissenschaft & Medien",
-      slug: "wissenschaft-und-publikationen",
-      children: [
-        "wissenschaft-und-publikationen",
-        "vortraege-und-medien",
-        "internationale-zusammenarbeit",
-      ]
-        .map((s) => slugMap.get(s))
-        .filter(Boolean) as PageHeader[],
-    },
-    {
-      label: "Über mich",
-      slug: "zur-person",
-      children: ["zur-person", "kontakt"]
-        .map((s) => slugMap.get(s))
-        .filter(Boolean) as PageHeader[],
-    },
-  ];
-
-  return groups;
-}
 
 function DropdownGroup({
   group,
@@ -63,7 +27,6 @@ function DropdownGroup({
 }) {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -82,7 +45,6 @@ function DropdownGroup({
 
   return (
     <div
-      ref={containerRef}
       className="relative"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
@@ -105,7 +67,7 @@ function DropdownGroup({
         `}
       >
         <div className="bg-(--background) border border-(--ultralight-accent)/60 rounded-lg shadow-lg py-2 min-w-56">
-          {group.children.map((page) => (
+          {group.pages.map((page) => (
             <Link
               key={page.id}
               href={`/${locale}/${page.slug}`}
@@ -122,22 +84,43 @@ function DropdownGroup({
 
 type DesktopNavProps = {
   locale: string;
+  navGroups: NavGroup[];
   pageHeaders: PageHeader[];
 };
 
-export default function DesktopNav({ locale, pageHeaders }: DesktopNavProps) {
-  const groups = groupPages(pageHeaders);
+export default function DesktopNav({ locale, navGroups, pageHeaders }: DesktopNavProps) {
+  // If nav groups are available from CMS, use them
+  if (navGroups.length > 0) {
+    const sorted = [...navGroups].sort((a, b) => a.order - b.order);
+    return (
+      <ul className="flex items-center gap-x-1">
+        <li>
+          <Link href={`/${locale}`} className="px-3 py-2 font-serif text-sm font-medium">
+            JAA
+          </Link>
+        </li>
+        {sorted.map((group) => (
+          <li key={group.id}>
+            <DropdownGroup group={group} locale={locale} />
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
+  // Fallback: flat list of all pages (if no groups configured yet)
   return (
-    <ul className="flex items-center gap-x-1">
+    <ul className="flex items-center gap-x-4">
       <li>
-        <Link href={`/${locale}`} className="px-3 py-2 font-serif text-sm font-medium">
+        <Link href={`/${locale}`} className="mr-4 font-serif">
           JAA
         </Link>
       </li>
-      {groups.map((group) => (
-        <li key={group.slug}>
-          <DropdownGroup group={group} locale={locale} />
+      {pageHeaders.map((page) => (
+        <li key={page.id}>
+          <Link href={`/${locale}/${page.slug}`} className="mr-4 text-sm">
+            {page.heading}
+          </Link>
         </li>
       ))}
     </ul>
