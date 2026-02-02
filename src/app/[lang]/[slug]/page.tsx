@@ -46,14 +46,14 @@ export default async function SubPage({ params }: PropTypes) {
     <div>
       {heroImageUrl && <SmallHeroImage url={heroImageUrl} />}
       <div className="p-10">
-        <h1 className="text-4xl md:text-7xl font-semibold font-serif">
+        <h1 className="text-4xl md:text-7xl font-semibold font-serif mb-4">
           {page.heading}
         </h1>
         {page.subHeading && (
           <h2 className="text-3xl font-semibold">{page.subHeading}</h2>
         )}
         {content.length > 0 && (
-          <section className="py-10">
+          <section className="pt-8 pb-10">
             {content.map((block: any, index: number) => {
               if (block.__component === "text.rich-text-block" && block.body) {
                 return <StrapiRichText content={block.body} key={index} />;
