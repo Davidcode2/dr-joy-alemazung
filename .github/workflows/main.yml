@@ -37,11 +37,21 @@ jobs:
     outputs:
       version: ${{ steps.bump.outputs.version }}
       sha: ${{ steps.push.outputs.sha }}
+      bumped: ${{ steps.check-pat.outputs.has_pat }}
     steps:
+      - name: Check for DEPLOYMENT_PAT
+        id: check-pat
+        run: |
+          if [ -n "${{ secrets.DEPLOYMENT_PAT }}" ]; then
+            echo "has_pat=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_pat=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.DEPLOYMENT_PAT }}
+          token: ${{ secrets.DEPLOYMENT_PAT || github.token }}
 
       - name: Bump patch version in package.json
         id: bump
@@ -55,6 +65,7 @@ jobs:
 
       - name: Commit version bump
         id: push
+        if: steps.check-pat.outputs.has_pat == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -72,7 +83,7 @@ jobs:
     with:
       image_name: ghcr.io/${{ github.repository }}
       dockerfile: dockerfile
-      ref: ${{ needs.bump-version.outputs.sha }}
+      ref: ${{ needs.bump-version.outputs.sha || '' }}
       build_args: |
         SKIP_BUILD_STATIC_GENERATION=false
         STRAPI_API_URL_PROD=https://api.alemazung.immoly.io
@@ -81,6 +92,7 @@ jobs:
   deploy-app:
     runs-on: ubuntu-latest
     needs: [bump-version, build-and-push]
+    if: needs.bump-version.outputs.bumped == 'true'
     permissions:
       contents: read
     env:
@@ -102,11 +114,9 @@ jobs:
 
       - name: Commit and push deployment changes
         working-directory: joy-alemazung
-        env:
-          GIT_TOKEN: ${{ secrets.DEPLOYMENT_PAT }}
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git diff --exit-code && echo "No changes to commit" && exit 0
           git add .
           git commit -m "deploy: alemazung website v${VERSION}"

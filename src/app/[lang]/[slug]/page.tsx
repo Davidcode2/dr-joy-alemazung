@@ -15,15 +15,22 @@ export default async function SubPage({ params }: PropTypes) {
 
   const path = `/pages`;
   const urlParamsObject = {
-    filters: { slug: slug },
+    filters: { slug },
     populate: {
       heroImage: { fields: ["url"] },
-      content: { populate: "*" },
       posts: { populate: "*" },
     },
   };
-  const response = await fetchAPI(path, urlParamsObject, {}, locale);
-  const page = response?.data?.[0];
+
+  // Try fetching with locale first, fallback to without locale
+  let response = await fetchAPI(path, urlParamsObject, {}, locale);
+  let page = response?.data?.[0];
+
+  if (!page) {
+    // Fallback: try without locale (default locale content)
+    response = await fetchAPI(path, urlParamsObject);
+    page = response?.data?.[0];
+  }
 
   if (!page) {
     return <div className="p-10">Not found</div>;
@@ -48,8 +55,11 @@ export default async function SubPage({ params }: PropTypes) {
         {content.length > 0 && (
           <section className="py-10">
             {content.map((block: any, index: number) => {
-              if (block.body) {
+              if (block.__component === "text.rich-text-block" && block.body) {
                 return <StrapiRichText content={block.body} key={index} />;
+              }
+              if (block.children) {
+                return <StrapiRichText content={[block]} key={index} />;
               }
               return null;
             })}
