@@ -45,7 +45,7 @@ export default async function SubPage({ params }: PropTypes) {
   return (
     <div>
       {heroImageUrl && <SmallHeroImage url={heroImageUrl} />}
-      <div className="p-10">
+      <div className="mx-auto max-w-5xl p-10">
         <h1 className="text-4xl md:text-7xl font-semibold font-serif mb-4">
           {page.heading}
         </h1>
