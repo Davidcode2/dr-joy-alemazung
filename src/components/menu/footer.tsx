@@ -29,7 +29,7 @@ export default async function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="w-full border-t border-(--ultralight-accent)/40 bg-(--ultralight-accent)/20">
-      <div className="max-w-7xl mx-auto px-6 pt-62 pb-40">
+      <div className="max-w-7xl mx-auto p-6 lg:pt-62 pb-40">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div className="md:col-span-1">
