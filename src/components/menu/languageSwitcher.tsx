@@ -9,5 +9,5 @@ export default function LanguageSwitcher({ locale }: { locale: string }) {
     const newPath = currentPath.replace(`/${locale}`, `/${newLocale}`);
     window.location.href = newPath;
   };
-  return <Globe onClick={toggleLanguage} />;
+  return <Globe onClick={toggleLanguage} strokeWidth={1.2} />;
 }

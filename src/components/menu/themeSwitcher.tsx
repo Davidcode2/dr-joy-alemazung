@@ -18,7 +18,7 @@ export default function ThemeSwitcher() {
 
   return (
     <div onClick={toggleTheme}>
-      {theme && theme!.includes("dark") ? <Sun /> : <Moon />}
+      {theme && theme!.includes("dark") ? <Sun strokeWidth={1.2} /> : <Moon strokeWidth={1.2} />}
     </div>
   );
 }
