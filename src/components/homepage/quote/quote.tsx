@@ -18,7 +18,7 @@ export default function Quote({ data }: { data: QuoteData }) {
             </span>
           </blockquote>
           <span className="content-center text-8xl font-serif ml-4 leading-none">
-            "
+            {"\u201C"}
           </span>
         </div>
         <div className="mt-6 text-center">
