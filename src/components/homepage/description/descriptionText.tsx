@@ -1,6 +1,6 @@
 import Image from "next/image";
 import StrapiRichText from "../../post/strapiRichText";
-import { t } from "../../app/[lang]/utils/locale-helpers";
+import { t } from "@/src/lib/i18n";
 
 export default function DescriptionText({
   content,
