@@ -48,6 +48,18 @@ export default async function Home({ params }: PropTypes) {
       populate: {
         headerImage: { fields: ["url"] },
         navigationElements: { populate: "*" },
+        quote: { populate: "*" },
+        experienceSection: {
+          populate: {
+            experienceCards: { populate: "*" },
+          },
+        },
+        familyVita: {
+          populate: {
+            vitaItems: { populate: "*" },
+            image: { fields: ["url", "alternativeText", "width", "height"] },
+          },
+        },
       },
       fields: ["heading", "subHeading", "content"],
     };
@@ -90,11 +102,11 @@ export default async function Home({ params }: PropTypes) {
         />
       <DescriptionText content={data.content} />
       <VerticalDividerBracket color={"--background"} />
-      <Quote />
+      <Quote data={data.quote} />
       <VerticalDividerBracket />
-      <Experience />
+      <Experience data={data.experienceSection} />
       <VerticalDividerBracket color={"--megalight-accent"}/>
-      <FamilyVita />
+      <FamilyVita data={data.familyVita} />
     </div>
   );
 }
