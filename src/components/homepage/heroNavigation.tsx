@@ -1,5 +1,6 @@
 import { MoveRightIcon } from "lucide-react";
 import Link from "next/link";
+import { t } from "../../app/[lang]/utils/locale-helpers";
 
 type Page = {
   id: number;

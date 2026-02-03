@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fetchAPI } from "../../app/[lang]/utils/fetch-api";
+import { t } from "../../app/[lang]/utils/locale-helpers";
 import ObfuscatedEmailButton from "../shared/obfuscatedEmailButton";
 
 type FooterProps = {
@@ -48,7 +49,7 @@ export default async function Footer({ locale }: FooterProps) {
           {/* Main Sections */}
           <div>
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-(--grey-accent)">
-              Navigation
+              {t("navigation", locale)}
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -56,7 +57,7 @@ export default async function Footer({ locale }: FooterProps) {
                   href={`/${locale}`}
                   className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
-                  Home
+                  {t("home", locale)}
                 </Link>
               </li>
               {pageHeaders.data.map((page: PageHeader) => (
@@ -75,7 +76,7 @@ export default async function Footer({ locale }: FooterProps) {
           {/* Legal */}
           <div>
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-(--grey-accent)">
-              Rechtliches
+              {t("legal", locale)}
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -83,7 +84,7 @@ export default async function Footer({ locale }: FooterProps) {
                   href={`/${locale}/impressum`}
                   className="text-(--grey-accent)/70 hover:text-(--grey-accent) transition"
                 >
-                  Impressum
+                  {t("impressum", locale)}
                 </Link>
               </li>
               <li className="text-(--grey-accent)/70">

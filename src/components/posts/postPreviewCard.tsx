@@ -19,7 +19,7 @@ export default function PostPreviewCard({ post, locale }: PropTypes) {
       </div>
       <p>{postContentPreview}</p>
       <Link href={`/${locale}/posts/${post.slug}`}>
-        <MoreButton />
+        <MoreButton locale={locale} />
       </Link>
     </div>
   );
