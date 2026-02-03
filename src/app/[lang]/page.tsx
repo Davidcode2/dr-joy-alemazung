@@ -67,7 +67,25 @@ export default async function Home({ params }: PropTypes) {
     return responseData.data;
   };
 
-  const data = await getData();
+  const fetchNavigationGroups = async () => {
+    const responseData = await fetchAPI(
+      "/navigation-groups",
+      {
+        populate: {
+          pages: { fields: ["heading", "slug"] },
+        },
+        sort: { order: "asc" },
+      },
+      {},
+      locale,
+    );
+    return responseData.data || [];
+  };
+
+  const [data, navigationGroups] = await Promise.all([
+    getData(),
+    fetchNavigationGroups(),
+  ]);
 
   // Add safety checks
   if (!data || !data.headerImage) {
@@ -98,7 +116,7 @@ export default async function Home({ params }: PropTypes) {
       </HeroImage>
         <HeroNavigation
           locale={lang}
-          navigationElements={data.navigationElements}
+          navigationGroups={navigationGroups}
         />
       <DescriptionText content={data.content} />
       <VerticalDividerBracket color={"--background"} />
