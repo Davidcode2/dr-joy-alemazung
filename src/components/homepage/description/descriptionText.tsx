@@ -1,7 +1,14 @@
 import Image from "next/image";
 import StrapiRichText from "../../post/strapiRichText";
+import { t } from "../../app/[lang]/utils/locale-helpers";
 
-export default function DescriptionText({ content }: { content: any }) {
+export default function DescriptionText({
+  content,
+  locale,
+}: {
+  content: any;
+  locale: string;
+}) {
   return (
     <>
       <div className="pb-40 lg:pt-28">
@@ -16,7 +23,7 @@ export default function DescriptionText({ content }: { content: any }) {
           </div>
           <div className="py-20 xl:py-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-4xl md:text-7xl lg:text-7xl text-(--accent)">
             <div className="font-serif">
-              Lokale Verantwortung mit globaler Perspektive
+              {t("localResponsibilityGlobalPerspective", locale)}
             </div>
           </div>
         </div>

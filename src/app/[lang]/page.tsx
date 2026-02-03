@@ -118,7 +118,7 @@ export default async function Home({ params }: PropTypes) {
           locale={lang}
           navigationGroups={navigationGroups}
         />
-      <DescriptionText content={data.content} />
+      <DescriptionText content={data.content} locale={lang} />
       <VerticalDividerBracket color={"--background"} />
       <Quote data={data.quote} />
       <VerticalDividerBracket />
