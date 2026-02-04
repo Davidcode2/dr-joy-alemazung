@@ -14,6 +14,9 @@ export async function fetchAPI(
         ? process.env.STRAPI_API_TOKEN_PROD
         : process.env.NEXT_PUBLIC_STRAPI_API_TOKEN_DEV;
     
+    // Fallback to ALEMAZUNG_STRAPI_BOT_API_TOKEN if the primary token is not set
+    const authToken = token || process.env.ALEMAZUNG_STRAPI_BOT_API_TOKEN;
+    
     // Add locale to urlParamsObject if provided
     const paramsWithLocale = locale
       ? { ...urlParamsObject, locale }
@@ -24,7 +27,7 @@ export async function fetchAPI(
       next: { revalidate: 60 },
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        "Authorization": `Bearer ${authToken}`,
       },
       ...options,
     };
