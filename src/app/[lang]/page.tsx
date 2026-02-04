@@ -2,7 +2,7 @@ import { fetchAPI } from "./utils/fetch-api";
 import { getStrapiMedia } from "./utils/api-helpers";
 import { normalizeLocale } from "./utils/locale-helpers";
 import HeroImage from "@/src/components/homepage/heroImage";
-import HeroNavigation from "@/src/components/homepage/heroNavigation";
+import HeroSummaryQuoteSeparator from "@/src/components/homepage/heroSummaryQuoteSeparator/heroSummaryQuoteSeparator";
 import ImageMenu from "@/src/components/homepage/imageMenu/imageMenu";
 import DescriptionText from "@/src/components/homepage/description/descriptionText";
 import Quote from "@/src/components/homepage/quote/quote";
@@ -68,21 +68,6 @@ export default async function Home({ params }: PropTypes) {
     return responseData.data;
   };
 
-  const fetchNavigationGroups = async () => {
-    const responseData = await fetchAPI(
-      "/navigation-groups",
-      {
-        populate: {
-          pages: { fields: ["heading", "slug"] },
-        },
-        sort: { order: "asc" },
-      },
-      {},
-      locale,
-    );
-    return responseData.data || [];
-  };
-
   const fetchPages = async () => {
     const responseData = await fetchAPI(
       "/pages",
@@ -98,9 +83,8 @@ export default async function Home({ params }: PropTypes) {
     return responseData.data || [];
   };
 
-  const [data, navigationGroups, pages] = await Promise.all([
+  const [data, pages] = await Promise.all([
     getData(),
-    fetchNavigationGroups(),
     fetchPages(),
   ]);
 
@@ -131,11 +115,8 @@ export default async function Home({ params }: PropTypes) {
           </div>
         </div>
       </HeroImage>
+      <HeroSummaryQuoteSeparator content={data.content} quote={data.quote} locale={lang} />
       <ImageMenu pages={pages} locale={lang} />
-      <HeroNavigation
-        locale={lang}
-        navigationGroups={navigationGroups}
-      />
       <DescriptionText content={data.content} locale={lang} />
       <VerticalDividerBracket color={"--background"} />
       <Quote data={data.quote} />
