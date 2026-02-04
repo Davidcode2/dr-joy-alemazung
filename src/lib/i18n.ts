@@ -49,12 +49,12 @@ export function normalizeLocale(locale: string): Locale {
  */
 export function t(key: TranslationKey, locale: string): string {
   const normalizedLocale = normalizeLocale(locale);
-  return translations[normalizedLocale]?.[key] ?? translations.de[key] ?? key;
+  return translations[normalizedLocale]?.[key] ?? translations["de-DE"][key] ?? key;
 }
 
 /**
  * Get default locale
  */
 export function getDefaultLocale(): Locale {
-  return "de";
+  return "de-DE";
 }
