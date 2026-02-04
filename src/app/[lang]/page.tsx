@@ -3,6 +3,7 @@ import { getStrapiMedia } from "./utils/api-helpers";
 import { normalizeLocale } from "./utils/locale-helpers";
 import HeroImage from "@/src/components/homepage/heroImage";
 import HeroNavigation from "@/src/components/homepage/heroNavigation";
+import ImageMenu from "@/src/components/homepage/imageMenu/imageMenu";
 import DescriptionText from "@/src/components/homepage/description/descriptionText";
 import Quote from "@/src/components/homepage/quote/quote";
 import FamilyVita from "@/src/components/homepage/familyVita/familyVita";
@@ -82,9 +83,25 @@ export default async function Home({ params }: PropTypes) {
     return responseData.data || [];
   };
 
-  const [data, navigationGroups] = await Promise.all([
+  const fetchPages = async () => {
+    const responseData = await fetchAPI(
+      "/pages",
+      {
+        populate: {
+          heroImage: { fields: ["url", "alternativeText"] },
+        },
+        fields: ["heading", "subHeading", "slug"],
+      },
+      {},
+      locale,
+    );
+    return responseData.data || [];
+  };
+
+  const [data, navigationGroups, pages] = await Promise.all([
     getData(),
     fetchNavigationGroups(),
+    fetchPages(),
   ]);
 
   // Add safety checks
@@ -114,10 +131,11 @@ export default async function Home({ params }: PropTypes) {
           </div>
         </div>
       </HeroImage>
-        <HeroNavigation
-          locale={lang}
-          navigationGroups={navigationGroups}
-        />
+      <ImageMenu pages={pages} locale={lang} />
+      <HeroNavigation
+        locale={lang}
+        navigationGroups={navigationGroups}
+      />
       <DescriptionText content={data.content} locale={lang} />
       <VerticalDividerBracket color={"--background"} />
       <Quote data={data.quote} />
