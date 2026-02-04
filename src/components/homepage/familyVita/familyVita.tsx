@@ -47,19 +47,19 @@ export default function FamilyVita({ data }: { data: FamilyVitaData }) {
       <h2 className="text-center mt-0 py-40 text-5xl lg:text-4xl text-foreground font-serif">
         {data.sectionTitle}
       </h2>
-      <div className="">
+      <div className="max-w-3xl mx-auto">
         {imageUrl && (
-          <div className="flex items-center w-full justify-center">
+          <div className="w-full">
             <Image
               src={imageUrl}
               alt={data.image?.alternativeText || "Portrait"}
-              className="object-cover h-full rounded-t-lg"
+              className="object-cover w-full h-auto rounded-t-lg"
               width={data.image?.width || 1200}
               height={data.image?.height || 1000}
             />
           </div>
         )}
-        <div className="bg-(--ultralight-accent) mx-auto rounded-b-lg">
+        <div className="bg-(--ultralight-accent) rounded-b-lg">
           <ul className="px-6 md:px-10 lg:mx-auto flex justify-center h-full flex-col">
             {data.vitaItems.map((item, index) => {
               const IconComponent = iconMap[item.icon] || Asterisk;
