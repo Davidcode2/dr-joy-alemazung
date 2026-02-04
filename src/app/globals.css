@@ -76,3 +76,47 @@ body {
     background: hsl(30, 25%, 25%);
   }
 }
+
+/* Blue Professional Theme - Light */
+[data-theme="blue-light"] {
+  --background: #ffffff;
+  --foreground: hsl(212, 35%, 15%);
+  --dark-accent: hsl(212, 55%, 28%);
+  --accent: hsl(212, 59%, 40%);
+  --light-accent: hsl(212, 50%, 75%);
+  --neutral-accent: hsl(212, 45%, 50%);
+  --strong-accent: hsl(212, 65%, 35%);
+  --ultralight-accent: hsl(212, 40%, 95%);
+  --megalight-accent: hsl(212, 35%, 97%);
+  --grey-accent: hsl(212, 15%, 25%);
+  --muted-accent: hsl(212, 20%, 40%);
+  --primary: hsl(212, 59%, 40%);
+  --secondary: hsl(212, 45%, 85%);
+  --success: hsl(145, 55%, 42%);
+  --dark-success: hsl(145, 60%, 35%);
+  --alert: hsl(0, 70%, 50%);
+}
+
+/* Blue Professional Theme - Dark */
+[data-theme="blue-dark"] {
+  --background: hsl(212, 25%, 10%);
+  --foreground: hsl(212, 20%, 95%);
+  --dark-accent: hsl(212, 50%, 75%);
+  --accent: hsl(212, 55%, 55%);
+  --light-accent: hsl(212, 40%, 65%);
+  --neutral-accent: hsl(212, 45%, 50%);
+  --strong-accent: hsl(212, 60%, 60%);
+  --ultralight-accent: hsl(212, 25%, 22%);
+  --megalight-accent: hsl(212, 20%, 15%);
+  --grey-accent: hsl(212, 15%, 70%);
+  --muted-accent: hsl(212, 20%, 60%);
+  --primary: hsl(212, 55%, 55%);
+  --secondary: hsl(212, 35%, 40%);
+  --success: hsl(145, 50%, 55%);
+  --dark-success: hsl(145, 55%, 45%);
+  --alert: hsl(0, 75%, 60%);
+
+  ::selection {
+    background: hsl(212, 40%, 30%);
+  }
+}
