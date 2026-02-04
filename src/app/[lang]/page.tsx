@@ -7,6 +7,7 @@ import ImageMenu from "@/src/components/homepage/imageMenu/imageMenu";
 import DescriptionText from "@/src/components/homepage/description/descriptionText";
 import Quote from "@/src/components/homepage/quote/quote";
 import FamilyVita from "@/src/components/homepage/familyVita/familyVita";
+import SocialLinks from "@/src/components/homepage/socialLinks/socialLinks";
 import Experience from "@/src/components/homepage/experience/experience";
 import VerticalDividerBracket from "@/src/components/shared/verticalDividerBracket";
 
@@ -118,7 +119,8 @@ export default async function Home({ params }: PropTypes) {
       <HeroSummaryQuoteSeparator content={data.content} quote={data.quote} locale={lang} />
       <ImageMenu pages={pages} locale={lang} />
       <DescriptionText content={data.content} locale={lang} />
-      <VerticalDividerBracket color={"--background"} />
+      <VerticalDividerBracket />
+      <SocialLinks sectionTitle={lang === "en" ? "Connect" : "Verbinden"} />
     </div>
   );
 }
