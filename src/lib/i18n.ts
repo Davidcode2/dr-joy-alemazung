@@ -9,6 +9,7 @@ export type TranslationKey =
   | "home"
   | "impressum"
   | "more"
+  | "learnMore"
   | "localResponsibilityGlobalPerspective";
 
 const translations: Record<Locale, Record<TranslationKey, string>> = {
@@ -18,6 +19,7 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     home: "Startseite",
     impressum: "Impressum",
     more: "Mehr",
+    learnMore: "Erfahren Sie mehr",
     localResponsibilityGlobalPerspective: "Lokale Verantwortung mit globaler Perspektive",
   },
   en: {
@@ -26,6 +28,7 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     home: "Home",
     impressum: "Imprint",
     more: "More",
+    learnMore: "Learn more",
     localResponsibilityGlobalPerspective: "Local Responsibility with Global Perspective",
   },
 };

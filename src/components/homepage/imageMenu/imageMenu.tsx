@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getStrapiMedia } from "@/src/app/[lang]/utils/api-helpers";
+import { t } from "@/src/lib/i18n";
 import { ArrowRight } from "lucide-react";
 
 type Page = {
@@ -57,19 +58,17 @@ export default function ImageMenu({ pages, locale }: ImageMenuProps) {
                 {page.heading}
               </h3>
 
-              {page.subHeading && (
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-(--light-accent) flex items-center justify-center transition-all duration-300 group-hover:bg-(--accent) group-hover:scale-110">
-                    <ArrowRight
-                      size={16}
-                      className="text-white transition-colors duration-300"
-                    />
-                  </div>
-                  <span className="text-white/90 text-sm md:text-base">
-                    {page.subHeading}
-                  </span>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-(--light-accent) flex items-center justify-center transition-all duration-300 group-hover:bg-(--accent) group-hover:scale-110">
+                  <ArrowRight
+                    size={16}
+                    className="text-white transition-colors duration-300"
+                  />
                 </div>
-              )}
+                <span className="text-white/90 text-sm md:text-base">
+                  {page.subHeading || t("learnMore", locale)}
+                </span>
+              </div>
             </div>
           </Link>
         );
