@@ -1,7 +1,7 @@
 // Centralized translations for hardcoded strings
 // German is the fallback locale
 
-export type Locale = "de" | "en";
+export type Locale = "de-DE" | "en";
 
 export type TranslationKey =
   | "navigation"
@@ -12,7 +12,7 @@ export type TranslationKey =
   | "localResponsibilityGlobalPerspective";
 
 const translations: Record<Locale, Record<TranslationKey, string>> = {
-  de: {
+  "de-DE": {
     navigation: "Navigation",
     legal: "Rechtliches",
     home: "Startseite",
@@ -33,13 +33,14 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
 /**
  * Normalize locale code
  * Handles both "de" and "de-DE" formats
+ * Returns "de-DE" for German, "en" for English
  */
 export function normalizeLocale(locale: string): Locale {
-  if (locale.length === 2) {
-    return locale as Locale;
+  if (locale === "en" || locale.startsWith("en-")) {
+    return "en";
   }
-  // Extract language code from "de-DE" format
-  return locale.split("-")[0] as Locale;
+  // Default to de-DE for German (including "de" and "de-DE")
+  return "de-DE";
 }
 
 /**
@@ -48,12 +49,12 @@ export function normalizeLocale(locale: string): Locale {
  */
 export function t(key: TranslationKey, locale: string): string {
   const normalizedLocale = normalizeLocale(locale);
-  return translations[normalizedLocale]?.[key] ?? translations.de[key] ?? key;
+  return translations[normalizedLocale]?.[key] ?? translations["de-DE"][key] ?? key;
 }
 
 /**
  * Get default locale
  */
 export function getDefaultLocale(): Locale {
-  return "de";
+  return "de-DE";
 }
