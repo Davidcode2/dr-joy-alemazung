@@ -3,32 +3,24 @@ type QuoteData = {
   author: string;
 };
 
-function extractPlainText(content: unknown): string {
+function extractSecondParagraph(content: unknown): string {
   if (!content || !Array.isArray(content)) return "";
   
-  let text = "";
+  const secondBlock = content[1];
+  if (!secondBlock) return "";
   
-  content.forEach((block: unknown) => {
-    const typedBlock = block as { children?: unknown[] };
-    if (typedBlock.children && Array.isArray(typedBlock.children)) {
-      typedBlock.children.forEach((child: unknown) => {
-        const typedChild = child as { text?: string };
-        if (typedChild.text) {
-          text += typedChild.text + " ";
-        }
-      });
+  const typedBlock = secondBlock as { children?: unknown[] };
+  if (!typedBlock.children || !Array.isArray(typedBlock.children)) return "";
+  
+  let text = "";
+  typedBlock.children.forEach((child: unknown) => {
+    const typedChild = child as { text?: string };
+    if (typedChild.text) {
+      text += typedChild.text + " ";
     }
   });
   
   return text.trim();
-}
-
-function createSummary(fullText: string, maxLength = 200): string {
-  if (fullText.length <= maxLength) return fullText;
-  
-  const truncated = fullText.substring(0, maxLength);
-  const lastSpace = truncated.lastIndexOf(" ");
-  return truncated.substring(0, lastSpace) + "...";
 }
 
 type HeroSummaryQuoteSeparatorProps = {
@@ -41,17 +33,16 @@ export default function HeroSummaryQuoteSeparator({
   content,
   quote,
 }: HeroSummaryQuoteSeparatorProps) {
-  const fullText = extractPlainText(content);
-  const summary = createSummary(fullText);
+  const secondParagraph = extractSecondParagraph(content);
   
-  if (!summary) return null;
+  if (!secondParagraph) return null;
 
   return (
     <div className="bg-(--background)">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="px-6 md:px-12 lg:px-20 py-16 lg:py-24 flex items-center">
           <p className="text-lg md:text-xl lg:text-2xl text-(--foreground) leading-relaxed font-light">
-            {summary}
+            {secondParagraph}
           </p>
         </div>
         
