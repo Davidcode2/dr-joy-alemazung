@@ -119,11 +119,6 @@ export default async function Home({ params }: PropTypes) {
       <ImageMenu pages={pages} locale={lang} />
       <DescriptionText content={data.content} locale={lang} />
       <VerticalDividerBracket color={"--background"} />
-      <Quote data={data.quote} />
-      <VerticalDividerBracket />
-      <Experience data={data.experienceSection} />
-      <VerticalDividerBracket color={"--megalight-accent"}/>
-      <FamilyVita data={data.familyVita} />
     </div>
   );
 }
