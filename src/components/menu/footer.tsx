@@ -2,6 +2,7 @@ import Link from "next/link";
 import { fetchAPI } from "../../app/[lang]/utils/fetch-api";
 import { t } from "../../app/[lang]/utils/locale-helpers";
 import ObfuscatedEmailButton from "../shared/obfuscatedEmailButton";
+import TestingThemeSwitcher from "./testingThemeSwitcher";
 
 type FooterProps = {
   locale: string;
@@ -90,6 +91,9 @@ export default async function Footer({ locale }: FooterProps) {
               <li className="text-(--grey-accent)/70">
                 © {new Date().getFullYear()} Dr. Joy A. Alemazung. Alle Rechte
                 vorbehalten.
+              </li>
+              <li>
+                <TestingThemeSwitcher />
               </li>
             </ul>
           </div>
