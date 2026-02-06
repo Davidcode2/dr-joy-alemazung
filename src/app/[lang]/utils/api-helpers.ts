@@ -3,7 +3,12 @@ export function getStrapiURL(path = "") {
     ? process.env.NEXT_PUBLIC_STRAPI_API_URL_DEV
     : process.env.STRAPI_API_URL_PROD
 
-  return `${ url || "http://localhost:1337"}${path}`;
+  // Fallback to production URL in production, localhost only in development
+  const fallbackUrl = process.env.NODE_ENV === "production"
+    ? "https://api.alemazung.immoly.io"
+    : "http://localhost:1337";
+
+  return `${url || fallbackUrl}${path}`;
 }
 
 export function getStrapiMedia(url: string | null) {
