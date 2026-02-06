@@ -4,6 +4,7 @@ import { normalizeLocale } from "../utils/locale-helpers";
 import SmallHeroImage from "@/src/components/homepage/shortHeroImage";
 import PostGrid from "@/src/components/posts/postGrid";
 import StrapiRichText from "@/src/components/post/strapiRichText";
+import SocialLinksList from "@/src/components/shared/socialLinksList";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;
@@ -67,6 +68,20 @@ export default async function SubPage({ params }: PropTypes) {
         )}
         {posts.length > 0 && <PostGrid posts={posts} locale={locale} />}
       </div>
+      {slug === "kontakt" && (
+        <div className="bg-(--ultralight-accent)">
+          <div className="mx-4 md:mx-auto md:w-2/3 pb-40">
+            <h2 className="text-center mt-0 py-20 text-5xl lg:text-4xl text-foreground font-serif">
+              {locale === "en" ? "Connect" : "Verbinden"}
+            </h2>
+            <div className="max-w-3xl mx-auto mt-10">
+              <div className="bg-(--light-accent)/40 rounded-lg">
+                <SocialLinksList />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
