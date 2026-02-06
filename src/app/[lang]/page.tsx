@@ -7,7 +7,7 @@ import ImageMenu from "@/src/components/homepage/imageMenu/imageMenu";
 import DescriptionText from "@/src/components/homepage/description/descriptionText";
 import Quote from "@/src/components/homepage/quote/quote";
 import FamilyVita from "@/src/components/homepage/familyVita/familyVita";
-import SocialLinks from "@/src/components/homepage/socialLinks/socialLinks";
+import SocialLinksSection from "@/src/components/shared/socialLinksSection";
 import Experience from "@/src/components/homepage/experience/experience";
 import VerticalDividerBracket from "@/src/components/shared/verticalDividerBracket";
 
@@ -84,9 +84,20 @@ export default async function Home({ params }: PropTypes) {
     return responseData.data || [];
   };
 
-  const [data, pages] = await Promise.all([
+  const fetchSocialLinks = async () => {
+    const responseData = await fetchAPI(
+      "/social-links",
+      { populate: { links: { populate: "*" } } },
+      {},
+      locale,
+    );
+    return responseData.data || null;
+  };
+
+  const [data, pages, socialLinks] = await Promise.all([
     getData(),
     fetchPages(),
+    fetchSocialLinks(),
   ]);
 
   // Add safety checks
@@ -120,7 +131,7 @@ export default async function Home({ params }: PropTypes) {
       <ImageMenu pages={pages} locale={lang} />
       <DescriptionText content={data.content} locale={lang} />
       <VerticalDividerBracket />
-      <SocialLinks sectionTitle={lang === "en" ? "Connect" : "Verbinden"} />
+      {socialLinks && <SocialLinksSection data={socialLinks} />}
     </div>
   );
 }

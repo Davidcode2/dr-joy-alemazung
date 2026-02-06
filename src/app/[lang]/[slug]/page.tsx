@@ -4,6 +4,7 @@ import { normalizeLocale } from "../utils/locale-helpers";
 import SmallHeroImage from "@/src/components/homepage/shortHeroImage";
 import PostGrid from "@/src/components/posts/postGrid";
 import StrapiRichText from "@/src/components/post/strapiRichText";
+import SocialLinksSection from "@/src/components/shared/socialLinksSection";
 
 type PropTypes = {
   params: Promise<{ lang: string; slug: string }>;
@@ -42,6 +43,18 @@ export default async function SubPage({ params }: PropTypes) {
   const content = page.content ?? [];
   const posts = page.posts ?? [];
 
+  // Fetch social links if enabled for this page
+  let socialLinksData = null;
+  if (page.showSocialLinks) {
+    const socialLinksResponse = await fetchAPI(
+      "/social-links",
+      { populate: { links: { populate: "*" } } },
+      {},
+      locale
+    );
+    socialLinksData = socialLinksResponse?.data;
+  }
+
   return (
     <div>
       {heroImageUrl && <SmallHeroImage url={heroImageUrl} />}
@@ -67,6 +80,7 @@ export default async function SubPage({ params }: PropTypes) {
         )}
         {posts.length > 0 && <PostGrid posts={posts} locale={locale} />}
       </div>
+      {socialLinksData && <SocialLinksSection data={socialLinksData} />}
     </div>
   );
 }
