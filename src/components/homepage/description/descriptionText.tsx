@@ -21,7 +21,7 @@ export default function DescriptionText({
               />
             </section>
           </div>
-          <div className="py-20 xl:py-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-4xl md:text-7xl lg:text-7xl text-(--accent)">
+          <div className="py-8 md:py-14 xl:py-0 order-1 xl:order-2 z-10 opacity-20 font-extrabold text-4xl md:text-7xl lg:text-7xl text-(--accent)">
             <div className="font-serif">
               {t("localResponsibilityGlobalPerspective", locale)}
             </div>
