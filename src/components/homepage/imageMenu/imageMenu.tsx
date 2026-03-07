@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getStrapiMedia } from "@/src/app/[lang]/utils/api-helpers";
 import { t } from "@/src/lib/i18n";
 import { ArrowRight } from "lucide-react";
+import rosenstein_image from "@/public/images/rosenstein_image.jpg";
 
 type Page = {
   id: number;
@@ -30,6 +31,10 @@ export default function ImageMenu({ pages, locale }: ImageMenuProps) {
   if (pagesWithImages.length === 0) {
     return null;
   }
+
+  const count = pagesWithImages.length;
+  const showExtraMd = count % 2 === 1;
+  const showExtraLg = count % 3 !== 0;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -73,6 +78,16 @@ export default function ImageMenu({ pages, locale }: ImageMenuProps) {
           </Link>
         );
       })}
+      <div className={`hidden ${showExtraMd ? 'md:block' : ''} ${showExtraLg ? 'lg:block' : ''} group relative aspect-[4/3] overflow-hidden`}>
+        <Image
+          src={rosenstein_image}
+          alt="Rosenstein"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      </div>
     </div>
   );
 }
