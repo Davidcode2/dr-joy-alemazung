@@ -92,6 +92,17 @@ export default async function Footer({ locale }: FooterProps) {
                 © {new Date().getFullYear()} Dr. Joy A. Alemazung. Alle Rechte
                 vorbehalten.
               </li>
+              <li className="text-xs text-(--grey-accent)/50 mt-4">
+                {t("webdesignBy", locale)}{" "}
+                <a
+                  href="https://jakob-lingel.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-(--grey-accent) transition"
+                >
+                  Jakob Lingel
+                </a>
+              </li>
               <li>
                 <TestingThemeSwitcher />
               </li>

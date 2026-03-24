@@ -10,7 +10,8 @@ export type TranslationKey =
   | "impressum"
   | "more"
   | "learnMore"
-  | "localResponsibilityGlobalPerspective";
+  | "localResponsibilityGlobalPerspective"
+  | "webdesignBy";
 
 const translations: Record<Locale, Record<TranslationKey, string>> = {
   "de-DE": {
@@ -21,6 +22,7 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     more: "Mehr",
     learnMore: "Erfahren Sie mehr",
     localResponsibilityGlobalPerspective: "Lokale Verantwortung mit globaler Perspektive",
+    webdesignBy: "Webdesign von",
   },
   en: {
     navigation: "Navigation",
@@ -30,6 +32,7 @@ const translations: Record<Locale, Record<TranslationKey, string>> = {
     more: "More",
     learnMore: "Learn more",
     localResponsibilityGlobalPerspective: "Local Responsibility with Global Perspective",
+    webdesignBy: "Webdesign by",
   },
 };
 
