@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
+// Build trigger: 2026-03-24
+
 const API_URL =
   process.env.NEXT_PUBLIC_MESSAGE_ROUTER_URL ||
   "https://notifications.jakob-lingel.dev/v1/submit";
