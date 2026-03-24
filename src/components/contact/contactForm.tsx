@@ -24,13 +24,14 @@ export default function ContactForm({ locale = "de" }: ContactFormProps) {
     setIsSubmitting(true);
     setStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData);
 
     // Honeypot check
     if (data._website) {
       setStatus("success");
-      e.currentTarget.reset();
+      form.reset();
       setIsSubmitting(false);
       return;
     }
@@ -59,7 +60,7 @@ export default function ContactForm({ locale = "de" }: ContactFormProps) {
 
       if (result.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         throw new Error(result.message || "Unknown error");
       }
