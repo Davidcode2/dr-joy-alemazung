@@ -85,6 +85,8 @@ jobs:
       build_args: |
         SKIP_BUILD_STATIC_GENERATION=false
         STRAPI_API_URL_PROD=https://api.alemazung.immoly.io
+        NEXT_PUBLIC_MESSAGE_ROUTER_URL=https://notifications.jakob-lingel.dev/v1/submit
+        NEXT_PUBLIC_MESSAGE_ROUTER_API_KEY=hKIyrwchSilSPF0Ifdrd3fTr2N9zCwMS
     secrets: inherit
 
   deploy-app:
