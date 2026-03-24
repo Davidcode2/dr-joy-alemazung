@@ -103,7 +103,7 @@ export default async function Footer({ locale }: FooterProps) {
                   Jakob Lingel
                 </a>
               </li>
-              <li>
+              <li className="mt-6">
                 <TestingThemeSwitcher />
               </li>
             </ul>

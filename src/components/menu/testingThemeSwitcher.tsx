@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Palette } from "lucide-react";
 
 const themes = ["light", "dark", "blue-light", "blue-dark"] as const;
 type Theme = (typeof themes)[number];
@@ -32,9 +33,11 @@ export default function TestingThemeSwitcher() {
   return (
     <button
       onClick={cycleTheme}
-      className="px-3 py-1 text-sm border border-(--grey-accent)/50 rounded cursor-pointer hover:bg-(--ultralight-accent)/50 transition"
+      className="p-2 rounded-full bg-(--ultralight-accent) hover:bg-(--light-accent) transition cursor-pointer"
+      aria-label={`Current theme: ${currentTheme}. Click to cycle themes.`}
+      title={`Theme: ${currentTheme}`}
     >
-      Theme: {currentTheme}
+      <Palette className="w-5 h-5 text-(--grey-accent)" />
     </button>
   );
 }
