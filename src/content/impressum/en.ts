@@ -4,9 +4,9 @@ export const impressumEN: ImpressumContent = {
   title: "Legal Notice",
   sections: {
     provider: {
-      heading: "Information provided according to § 5 TMG",
+      heading: "Information provided according to § 5 DDG",
       name: "Dr. Joy A. Alemazung",
-      address: ["Rathaus", "Hauptstr. 53", "73540 Heubach"],
+      address: ["Hauptstr. 53", "73540 Heubach"],
     },
     contact: {
       heading: "Contact",
@@ -14,8 +14,8 @@ export const impressumEN: ImpressumContent = {
       email: "info@heubach.de",
     },
     responsible: {
-      heading: "Responsible for content according to § 55 Abs. 2 RStV",
-      address: ["Rathaus", "Hauptstr. 53", "73540 Heubach"],
+      heading: "Responsible for content according to § 18 para. 2 MStV",
+      address: ["Dr. Joy A. Alemazung", "Hauptstr. 53", "73540 Heubach"],
     },
     contentLiability: {
       heading: "Liability for Content",
@@ -37,6 +37,10 @@ export const impressumEN: ImpressumContent = {
         "The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.",
         "Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of legal violations, we will remove such content immediately.",
       ],
+    },
+    consumerDispute: {
+      heading: "Consumer Dispute Resolution/Universal Arbitration Board",
+      text: "I am neither willing nor obligated to participate in dispute resolution proceedings before a consumer arbitration board.",
     },
   },
 };

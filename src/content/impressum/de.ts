@@ -4,9 +4,9 @@ export const impressumDE: ImpressumContent = {
   title: "Impressum",
   sections: {
     provider: {
-      heading: "Angaben gemäß § 5 TMG",
+      heading: "Angaben gemäß § 5 DDG",
       name: "Dr. Joy A. Alemazung",
-      address: ["Rathaus", "Hauptstr. 53", "73540 Heubach"],
+      address: ["Hauptstr. 53", "73540 Heubach"],
     },
     contact: {
       heading: "Kontakt",
@@ -14,8 +14,8 @@ export const impressumDE: ImpressumContent = {
       email: "info@heubach.de",
     },
     responsible: {
-      heading: "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
-      address: ["Rathaus", "Hauptstr. 53", "73540 Heubach"],
+      heading: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+      address: ["Dr. Joy A. Alemazung", "Hauptstr. 53", "73540 Heubach"],
     },
     contentLiability: {
       heading: "Haftung für Inhalte",
@@ -37,6 +37,10 @@ export const impressumDE: ImpressumContent = {
         "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
         "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
       ],
+    },
+    consumerDispute: {
+      heading: "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
+      text: "Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
     },
   },
 };

@@ -94,6 +94,14 @@ export default async function Impressum({ params }: PropTypes) {
             </p>
           ))}
         </section>
+
+        {/* Consumer Dispute Resolution */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+            {content.sections.consumerDispute.heading}
+          </h2>
+          <p>{content.sections.consumerDispute.text}</p>
+        </section>
       </div>
     </div>
   );
