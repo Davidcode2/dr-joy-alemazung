@@ -94,6 +94,20 @@ export default async function Impressum({ params }: PropTypes) {
             </p>
           ))}
         </section>
+
+        {/* Dispute Resolution */}
+        {content.sections.disputeResolution && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100 break-words">
+              {content.sections.disputeResolution.heading}
+            </h2>
+            {content.sections.disputeResolution.paragraphs.map((paragraph, index) => (
+              <p key={index} className={index > 0 ? "mt-2" : ""}>
+                {paragraph}
+              </p>
+            ))}
+          </section>
+        )}
       </div>
     </div>
   );

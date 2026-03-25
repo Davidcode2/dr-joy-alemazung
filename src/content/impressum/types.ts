@@ -27,5 +27,9 @@ export type ImpressumContent = {
       heading: string;
       paragraphs: string[];
     };
+    disputeResolution?: {
+      heading: string;
+      paragraphs: string[];
+    };
   };
 };

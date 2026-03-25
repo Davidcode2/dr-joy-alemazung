@@ -38,5 +38,11 @@ export const impressumEN: ImpressumContent = {
         "Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of legal violations, we will remove such content immediately.",
       ],
     },
+    disputeResolution: {
+      heading: "Consumer Dispute Resolution/Universal Arbitration Board",
+      paragraphs: [
+        "We are not willing or obligated to participate in dispute resolution proceedings before a consumer arbitration board.",
+      ],
+    },
   },
 };
